@@ -1,10 +1,10 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-namespace MiniGames.Implementations.Handshake
+namespace TenSecondsReplay.MiniGames.Implementations.Handshake
 {
     public class HandshakeMiniGame : MiniGameObject
     {
@@ -25,14 +25,13 @@ namespace MiniGames.Implementations.Handshake
 
         private void SpawnOptions()
         {
+            var prefabs = possibleOptionsPrefab.ToList()
+                .OrderBy(x => Random.Range(0, possibleOptionsPrefab.Length))
+                .Take(optionCount);
 
-            for (int i = 0; i < optionCount; i++)
+            foreach (var prefab in prefabs)
             {
-                var randCount = Random.Range(0, possibleOptionsPrefab.Length);
-
-                var randPrefab = possibleOptionsPrefab[randCount];
-
-                var option = Instantiate(randPrefab, optionParent).GetComponent<HandshakeOption>();
+                var option = Instantiate(prefab, optionParent);
                 spawnedOptions.Add(option);
             }
         }
@@ -70,9 +69,16 @@ namespace MiniGames.Implementations.Handshake
             pointer.value = alpha;
         }
 
+        public override string PromptText => "Shake Hands!";
+
         public override void OnInput()
         {
             isRunning = false;
+        }
+
+        public override void OnGameStart()
+        {
+            
         }
     }
 }

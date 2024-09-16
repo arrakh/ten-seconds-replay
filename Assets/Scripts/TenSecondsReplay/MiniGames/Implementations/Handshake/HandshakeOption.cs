@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MiniGames.Implementations.Handshake
+namespace TenSecondsReplay.MiniGames.Implementations.Handshake
 {
     public class HandshakeOption : MonoBehaviour
     {
