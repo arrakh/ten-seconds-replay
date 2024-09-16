@@ -13,6 +13,10 @@ namespace TenSecondsReplay
         [SerializeField] private GameTimerUI gameTimerUI;
         [SerializeField] private float promptTime, gameTime;
 
+        [Header("DEBUG")] 
+        [SerializeField] private bool useDebugMiniGame;
+        [SerializeField] private MiniGameObject debugMiniGame;
+
         private MiniGameObject currentMiniGame;
 
         private Coroutine gameCoroutine;
@@ -33,6 +37,10 @@ namespace TenSecondsReplay
             
             var randIndex = Random.Range(0, gamePrefabs.Length);
             var randGame = gamePrefabs[randIndex];
+            
+            #if UNITY_EDITOR
+            if (useDebugMiniGame && debugMiniGame) randGame = debugMiniGame;
+            #endif
 
             currentMiniGame = Instantiate(randGame);
 
