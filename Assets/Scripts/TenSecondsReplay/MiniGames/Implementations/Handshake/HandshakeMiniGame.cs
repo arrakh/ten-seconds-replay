@@ -15,6 +15,7 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
         [SerializeField] private float pointerSpeed = 1f;
         [SerializeField] private int optionCount = 3;
         [SerializeField] private TextMeshProUGUI debugText;
+        [SerializeField] private float sliderPadding = 0.05f;
         
         private float alphaTimer = 0f;
         private bool isRunning = true;
@@ -68,7 +69,7 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
         {
             alphaTimer += Time.deltaTime * pointerSpeed;
             var alpha = Mathf.InverseLerp(-1, 1, Mathf.Sin(alphaTimer));
-            pointer.value = alpha;
+            pointer.value = Mathf.Lerp(sliderPadding, 1f - sliderPadding, alpha);
         }
 
         public override string PromptText => "Shake Hands!";

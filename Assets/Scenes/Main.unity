@@ -172,8 +172,8 @@ MonoBehaviour:
   promptTime: 3
   gameTime: 7
   maxHealth: 3
-  useDebugMiniGame: 0
-  debugMiniGame: {fileID: 1266823272403947838, guid: cced07338505d094bb7653175cfa7d17, type: 3}
+  useDebugMiniGame: 1
+  debugMiniGameIndex: 0
 --- !u!4 &405253058
 Transform:
   m_ObjectHideFlags: 0

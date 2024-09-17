@@ -18,7 +18,7 @@ namespace TenSecondsReplay
         
         [Header("DEBUG")] 
         [SerializeField] private bool useDebugMiniGame;
-        [SerializeField] private MiniGameObject debugMiniGame;
+        [SerializeField] private int debugMiniGameIndex;
 
         private int health, score;
         private float difficultyValue = 1f;
@@ -50,7 +50,7 @@ namespace TenSecondsReplay
             var randGame = gamePrefabs[randIndex];
             
             #if UNITY_EDITOR
-            if (useDebugMiniGame && debugMiniGame) randGame = debugMiniGame;
+            if (useDebugMiniGame) randGame = gamePrefabs[debugMiniGameIndex];
             #endif
 
             currentMiniGame = Instantiate(randGame);
