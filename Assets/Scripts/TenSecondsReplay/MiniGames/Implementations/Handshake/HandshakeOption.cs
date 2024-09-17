@@ -6,13 +6,14 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
     public class HandshakeOption : MonoBehaviour
     {
         [SerializeField] private Image background;
-        [SerializeField] private bool isCorrect;
+        [SerializeField] private string handshakeId;
+        [SerializeField] private Color normalColor, highlightedColor;
 
-        public bool IsCorrect => isCorrect;
+        public string Id => handshakeId;
         
         public void SetHighlight(bool isHighlighted)
         {
-            background.color = isHighlighted ? Color.white : Color.gray;
+            background.color = isHighlighted ? highlightedColor : normalColor;
         }
     }
 }

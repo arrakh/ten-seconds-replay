@@ -63,6 +63,30 @@ namespace TenSecondsReplay.MiniGames.Implementations.Food
             onCheckpoint?.Invoke();
         }
 
+        //Credit to ChatGPT because i am tired as frick and heck -arr
+        public Card GetElementAtNormalizedPosition(float normalizedPosition)
+        {
+            // Ensure normalizedPosition is in the range [0, 1]
+            normalizedPosition = Mathf.Repeat(normalizedPosition, 1.0f);
+
+            // Calculate the total width of the card deck
+            float totalWidth = (elementWidth + padding) * cards.Count;
+
+            // Calculate the target pixel position considering the current targetPosition
+            float offsetPosition = normalizedPosition * totalWidth - targetPosition;
+
+            // Normalize the offset position to ensure it's within [0, totalWidth]
+            offsetPosition = (offsetPosition % totalWidth + totalWidth) % totalWidth;
+
+            // Determine the index of the card at the offset position
+            int cardIndex = Mathf.FloorToInt(offsetPosition / (elementWidth + padding));
+
+            // Return the card at the calculated index
+            return cards[cardIndex];
+        }
+
+
+        
         public void Setup(List<RectTransform> objects)
         {
             Stop();
@@ -105,10 +129,11 @@ namespace TenSecondsReplay.MiniGames.Implementations.Food
 
         public void SetPosition(float pixelPosition)
         {
+            var totalWidth = (elementWidth + padding) * cards.Count;
+
             foreach (var card in cards)
             {
                 var pos = card.rectTransform.anchoredPosition;
-                var totalWidth = (elementWidth + padding) * cards.Count;
                 pos.x = (card.offset + pixelPosition) % totalWidth - totalWidth / 2f + elementWidth / 2f;
                 card.rectTransform.anchoredPosition = pos;
             }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using TenSecondsReplay.Utilities;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,18 +12,24 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
     {
         [SerializeField] private Slider pointer;
         [SerializeField] private HandshakeOption[] possibleOptionsPrefab;
+        [SerializeField] private HandshakePrompt[] prompts;
         [SerializeField] private Transform optionParent;
         [SerializeField] private float pointerSpeed = 1f;
         [SerializeField] private int optionCount = 3;
         [SerializeField] private TextMeshProUGUI debugText;
         [SerializeField] private float sliderPadding = 0.05f;
+        [SerializeField] private Image person, bg;
         
         private float alphaTimer = 0f;
         private bool isRunning = true;
         private List<HandshakeOption> spawnedOptions = new();
+        private HandshakePrompt currentPrompt;
 
         private void Start()
         {
+            currentPrompt = prompts.GetRandom();
+            person.sprite = currentPrompt.personSprite;
+            bg.sprite = currentPrompt.bgSprite;
             SpawnOptions();
         }
 
@@ -77,7 +84,7 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
         public override void OnInput()
         {
             isRunning = false;
-            HasWon = GetSelectedOption().IsCorrect;
+            HasWon = GetSelectedOption().Id.Equals(currentPrompt.id);
             debugText.text = HasWon ? "Henllo :3" : "YOU DIED";
         }
 
