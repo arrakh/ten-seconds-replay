@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -13,6 +14,7 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
         [SerializeField] private Transform optionParent;
         [SerializeField] private float pointerSpeed = 1f;
         [SerializeField] private int optionCount = 3;
+        [SerializeField] private TextMeshProUGUI debugText;
         
         private float alphaTimer = 0f;
         private bool isRunning = true;
@@ -45,13 +47,13 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
 
         private void UpdateSelection()
         {
-            var selection = GetOption();
+            var selection = GetSelectedOption();
 
             foreach (var option in spawnedOptions)
                 option.SetHighlight(selection.Equals(option));
         }
 
-        HandshakeOption GetOption()
+        HandshakeOption GetSelectedOption()
         {
             var segmentSize = 1.0f / optionCount;
 
@@ -74,6 +76,8 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
         public override void OnInput()
         {
             isRunning = false;
+            HasWon = GetSelectedOption().IsCorrect;
+            debugText.text = HasWon ? "Henllo :3" : "YOU DIED";
         }
 
         public override void OnGameStart()

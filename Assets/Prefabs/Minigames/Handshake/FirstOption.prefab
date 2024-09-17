@@ -90,7 +90,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4007504625835658767, guid: 5d279e6a190bb51459259d38d4b471d9, type: 3}
       propertyPath: m_Name
-      value: HandshakeOption
+      value: FirstOption
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258328936407755488, guid: 5d279e6a190bb51459259d38d4b471d9, type: 3}
+      propertyPath: isCorrect
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

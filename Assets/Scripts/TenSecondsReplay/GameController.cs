@@ -22,6 +22,7 @@ namespace TenSecondsReplay
 
         private int health, score;
         private float difficultyValue = 1f;
+        private GameState state;
 
         private MiniGameObject currentMiniGame;
 
@@ -29,6 +30,8 @@ namespace TenSecondsReplay
 
         private void Update()
         {
+            if (state != GameState.Game) return;
+            
             if (Input.GetKeyDown(actionKey) || Input.GetMouseButtonDown(0)) 
                 currentMiniGame.OnInput();
         }
@@ -58,11 +61,13 @@ namespace TenSecondsReplay
 
         private IEnumerator StartGameCoroutine()
         {
+            state = GameState.Prompt;
             promptSequenceUI.Display(score, health, currentMiniGame);
             
             yield return new WaitForSeconds(promptTime);
             promptSequenceUI.Hide();
             
+            state = GameState.Game;
             gameTimerUI.Display(gameTime);
             yield return new WaitForSeconds(gameTime);
 
