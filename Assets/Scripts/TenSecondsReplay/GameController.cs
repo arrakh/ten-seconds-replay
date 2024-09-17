@@ -68,6 +68,7 @@ namespace TenSecondsReplay
             promptSequenceUI.Hide();
             
             state = GameState.Game;
+            currentMiniGame.OnGameStart();
             gameTimerUI.Display(gameTime);
             yield return new WaitForSeconds(gameTime);
 

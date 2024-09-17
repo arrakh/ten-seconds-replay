@@ -165,13 +165,14 @@ MonoBehaviour:
   actionKey: 122
   gamePrefabs:
   - {fileID: 5896007278401056796, guid: a5661f590a3ec424e970257b994c67e8, type: 3}
+  - {fileID: 1266823272403947838, guid: cced07338505d094bb7653175cfa7d17, type: 3}
   promptSequenceUI: {fileID: 166145151}
   gameTimerUI: {fileID: 1354008995}
   gameOverUI: {fileID: 1798002883}
   promptTime: 3
   gameTime: 7
   maxHealth: 3
-  useDebugMiniGame: 1
+  useDebugMiniGame: 0
   debugMiniGame: {fileID: 1266823272403947838, guid: cced07338505d094bb7653175cfa7d17, type: 3}
 --- !u!4 &405253058
 Transform:
