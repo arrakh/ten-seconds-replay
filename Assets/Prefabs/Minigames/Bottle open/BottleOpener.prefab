@@ -635,7 +635,7 @@ MonoBehaviour:
     comparisonValueHandler: {fileID: 7648453242567309242}
     comparisonVariable: {fileID: 0}
     percentageCompare: 0
-  minigame: {fileID: 0}
+  minigame: {fileID: 4702942489029109898}
   hasWon: 1
 --- !u!1 &6149541890481101951
 GameObject:
