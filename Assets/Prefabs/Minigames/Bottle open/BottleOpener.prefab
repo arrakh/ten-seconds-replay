@@ -47,7 +47,7 @@ MonoBehaviour:
   _showInfo: 1
   _explanation: Shakes the object [CapMain] with intensity 1 for 0.25 seconds
   description: 
-  enableAction: 1
+  enableAction: 0
   hasTags: 0
   actionTags: []
   hasConditions: 0
@@ -248,7 +248,7 @@ Transform:
   m_GameObject: {fileID: 1464251606438073038}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.08, y: 2.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -296,7 +296,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 374efaecc94f0fd4e9af4309a0c1f42b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 43507f0819712dd41bb4c41a65e09b18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -322,13 +322,14 @@ MonoBehaviour:
   _showInfo: 1
   _explanation: "When Minigame input is triggered:\n          adds 1 to variable
     Counter\n          shakes the object [CapMain] with intensity 1 for 0.25 seconds\n         
-    if (Counter == BreakPoint1) sets CapMain's sprite to [1]\n          if (Counter
-    == BreakPoint2) sets CapMain's sprite to [2]\n          if (Counter == BreakPoint3)
-    sets CapMain's sprite to [UNDEFINED]\n          if (Counter == BreakPoint1) plays
-    sound Open Sound at volume 1 and at pitch 1\n          if (Counter == BreakPoint2)
-    plays sound Open Sound at volume 1 and at pitch 1\n          if (Counter == BreakPoint3)
-    plays sound Open Sound at volume 1 and at pitch 1\n          Mark Minigame to
-    win\n"
+    if (Counter == BreakPoint1) sets CapMain's sprite to [bottlecap2-water]\n         
+    if (Counter == BreakPoint2) sets CapMain's sprite to [bottlecap3-water]\n         
+    if (Counter == BreakPoint3) sets CapMain's sprite to [UNDEFINED]\n          if
+    (Counter == BreakPoint1) plays sound Open Sound at volume 1 and at pitch 1\n         
+    if (Counter == BreakPoint2) plays sound Open Sound at volume 1 and at pitch 1\n         
+    if (Counter == BreakPoint3) plays sound Open Sound at volume 1 and at pitch 1\n         
+    if (Counter == BreakPoint3) enables object water-flowing-1\n          Mark Minigame
+    to win\n"
   description: 
   enableTrigger: 1
   allowRetrigger: 1
@@ -351,6 +352,8 @@ MonoBehaviour:
     action: {fileID: 6332784707625136332}
   - delay: 0
     action: {fileID: 5749854163540683758}
+  - delay: 0
+    action: {fileID: 7003080073350661749}
   - delay: 0
     action: {fileID: 895546271217142102}
   miniGame: {fileID: 4702942489029109898}
@@ -566,6 +569,90 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1374090972769205048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5947266191463403871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5638703565584594549}
+  - component: {fileID: 1837539811841224191}
+  m_Layer: 0
+  m_Name: water-background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5638703565584594549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5947266191463403871}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2, y: 1.66, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1374090972769205048}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1837539811841224191
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5947266191463403871}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -5
+  m_Sprite: {fileID: 21300000, guid: c6d3e153a99e2414485d383da4c173fb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 19.2, y: 10.8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &5969013195423949820
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,8 +837,8 @@ Transform:
   m_GameObject: {fileID: 6722355583181688244}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -2.56, z: 1}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 2.02, y: -1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1374090972769205048}
@@ -796,8 +883,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8e19ce4b5f7136b4e8c42388061a9bdb, type: 3}
+  m_SortingOrder: -2
+  m_Sprite: {fileID: 21300000, guid: b5c4f483983be094daefe6faeec772a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -853,8 +940,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: If (Counter == BreakPoint3) plays sound Open Sound at volume 1 and
-    at pitch 1
+  _explanation: If (Counter == BreakPoint3) plays sound 607784__department64__water_flicks_splash_013
+    at volume 1 and at pitch 1
   description: 
   enableAction: 1
   hasTags: 0
@@ -878,9 +965,164 @@ MonoBehaviour:
     comparisonValueHandler: {fileID: 7648453242567309242}
     comparisonVariable: {fileID: 0}
     percentageCompare: 0
-  clip: {fileID: 8300000, guid: ab421540960899f4580ec49663ed9c14, type: 3}
+  clip: {fileID: 8300000, guid: 02a5c7f850bd6044fbe6b39ada39defc, type: 3}
   volume: {x: 1, y: 1}
   pitch: {x: 1, y: 1}
+--- !u!1 &6805171116996550236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1776853627856145143}
+  - component: {fileID: 147056281896480203}
+  m_Layer: 0
+  m_Name: water-flowing-1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1776853627856145143
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6805171116996550236}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7491855, y: 0.6617673, z: -0.0015978684, w: 0.027975744}
+  m_LocalPosition: {x: -7.498, y: 3.3822, z: -0.1883}
+  m_LocalScale: {x: 1.31, y: 1.3672, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1374090972769205048}
+  m_LocalEulerAnglesHint: {x: 2.524, y: 178.013, z: 97.047}
+--- !u!212 &147056281896480203
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6805171116996550236}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 08221df5110fbac4e8606eb0cfd4f331, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.54, y: 5.86}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &6897664534625048370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8672157041211270413}
+  - component: {fileID: 7003080073350661749}
+  m_Layer: 0
+  m_Name: ShowWater
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8672157041211270413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6897664534625048370}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.078653, y: 1.2014291, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1374090972769205048}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7003080073350661749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6897664534625048370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c4cd7728b890f44ab45fb8ca143d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: If (Counter == BreakPoint3) enables object water-flowing-1
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 1
+  actionConditions:
+  - negate: 0
+    valueHandler: {fileID: 7504135180958746019}
+    variable: {fileID: 0}
+    valueType: 0
+    tag: {fileID: 0}
+    tagCountRangeEnabled: 0
+    tagCountRange: 0
+    sourceTransform: {fileID: 0}
+    rigidBody: {fileID: 0}
+    axis: 0
+    probe: {fileID: 0}
+    movementPlatformer: {fileID: 0}
+    comparison: 0
+    value: 0
+    comparisonValueHandler: {fileID: 7648453242567309242}
+    comparisonVariable: {fileID: 0}
+    percentageCompare: 0
+  target: {fileID: 6805171116996550236}
+  state: 0
 --- !u!1 &7779416979305122538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,7 +1255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: If (Counter == BreakPoint2) sets CapMain's sprite to [2]
+  _explanation: If (Counter == BreakPoint2) sets CapMain's sprite to [bottlecap3-water]
   description: 
   enableAction: 1
   hasTags: 0
@@ -1039,7 +1281,7 @@ MonoBehaviour:
     percentageCompare: 0
   target: {fileID: 7227484777826688633}
   changeType: 0
-  sprite: {fileID: 21300000, guid: 0be436ae90383634e9fd4d75859b9eab, type: 3}
+  sprite: {fileID: 21300000, guid: 318db237a42e2824687173efc1ddf950, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   boolState: 0
 --- !u!1 &8535136736902447702
@@ -1081,6 +1323,9 @@ Transform:
   - {fileID: 4535391337918642096}
   - {fileID: 269094553510981758}
   - {fileID: 7138066289597168260}
+  - {fileID: 8672157041211270413}
+  - {fileID: 1776853627856145143}
+  - {fileID: 5638703565584594549}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4702942489029109898
@@ -1214,7 +1459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: If (Counter == BreakPoint1) sets CapMain's sprite to [1]
+  _explanation: If (Counter == BreakPoint1) sets CapMain's sprite to [bottlecap2-water]
   description: 
   enableAction: 1
   hasTags: 0
@@ -1240,6 +1485,6 @@ MonoBehaviour:
     percentageCompare: 0
   target: {fileID: 7227484777826688633}
   changeType: 0
-  sprite: {fileID: 21300000, guid: 21851b1adee01cf43888788c4f160bfb, type: 3}
+  sprite: {fileID: 21300000, guid: c8d5186592d677d429f9671beed9c296, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   boolState: 0
