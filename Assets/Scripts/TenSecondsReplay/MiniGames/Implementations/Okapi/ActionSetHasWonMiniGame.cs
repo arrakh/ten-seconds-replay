@@ -18,5 +18,13 @@ namespace TenSecondsReplay.MiniGames.Implementations.Okapi.Editor
         {
             minigame.SetHasWon(hasWon);
         }
+        
+        protected override void CheckErrors()
+        {
+            base.CheckErrors();
+            
+            if (minigame == null)
+                _logs.Add(new LogEntry(LogEntry.Type.Error, "Okapi Mini Game object is not yet assigned!"));
+        }
     }
 }

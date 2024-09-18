@@ -9,12 +9,14 @@ namespace TenSecondsReplay.MiniGames.Implementations.Okapi.Editor
     public class ActionSetHasWonMiniGameEditor : ActionEditor
     {
         SerializedProperty propHasWon;
+        SerializedProperty propOkapiMinigame;
 
         protected override void OnEnable()
         {
             base.OnEnable();
 
             propHasWon = serializedObject.FindProperty("hasWon");
+            propOkapiMinigame = serializedObject.FindProperty("minigame");
         }
         
         public override void OnInspectorGUI()
@@ -27,6 +29,7 @@ namespace TenSecondsReplay.MiniGames.Implementations.Okapi.Editor
 
                 EditorGUI.BeginChangeCheck();
                 EditorGUILayout.PropertyField(propHasWon, new GUIContent("Has Won", "Whether the Minigame is won or not"));
+                EditorGUILayout.PropertyField(propOkapiMinigame, new GUIContent("Minigame", "Okapi Minigame"));
                 EditorGUI.EndChangeCheck();
                 
                 if (EditorGUI.EndChangeCheck())
