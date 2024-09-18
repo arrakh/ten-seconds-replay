@@ -327,7 +327,8 @@ MonoBehaviour:
     sets CapMain's sprite to [UNDEFINED]\n          if (Counter == BreakPoint1) plays
     sound Open Sound at volume 1 and at pitch 1\n          if (Counter == BreakPoint2)
     plays sound Open Sound at volume 1 and at pitch 1\n          if (Counter == BreakPoint3)
-    plays sound Open Sound at volume 1 and at pitch 1\n"
+    plays sound Open Sound at volume 1 and at pitch 1\n          Mark Minigame to
+    win\n"
   description: 
   enableTrigger: 1
   allowRetrigger: 1
@@ -350,6 +351,8 @@ MonoBehaviour:
     action: {fileID: 6332784707625136332}
   - delay: 0
     action: {fileID: 5749854163540683758}
+  - delay: 0
+    action: {fileID: 895546271217142102}
   miniGame: {fileID: 4702942489029109898}
 --- !u!1 &1702734841082029019
 GameObject:
@@ -563,6 +566,77 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1374090972769205048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5969013195423949820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7138066289597168260}
+  - component: {fileID: 895546271217142102}
+  m_Layer: 0
+  m_Name: SetWinCondition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7138066289597168260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5969013195423949820}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.0793015, y: -1.6850661, z: 0.052158557}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1374090972769205048}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &895546271217142102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5969013195423949820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f657165505f34256b7ea5cd7a84a3bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: Mark Minigame to win
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 1
+  actionConditions:
+  - negate: 0
+    valueHandler: {fileID: 7504135180958746019}
+    variable: {fileID: 0}
+    valueType: 0
+    tag: {fileID: 0}
+    tagCountRangeEnabled: 0
+    tagCountRange: 0
+    sourceTransform: {fileID: 0}
+    rigidBody: {fileID: 0}
+    axis: 0
+    probe: {fileID: 0}
+    movementPlatformer: {fileID: 0}
+    comparison: 0
+    value: 0
+    comparisonValueHandler: {fileID: 7648453242567309242}
+    comparisonVariable: {fileID: 0}
+    percentageCompare: 0
+  minigame: {fileID: 0}
+  hasWon: 1
 --- !u!1 &6149541890481101951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,6 +1080,7 @@ Transform:
   - {fileID: 8926844479987462403}
   - {fileID: 4535391337918642096}
   - {fileID: 269094553510981758}
+  - {fileID: 7138066289597168260}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4702942489029109898
