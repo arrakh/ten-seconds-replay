@@ -25,13 +25,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17137671188577792}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.76, y: 0.03, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.5, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.08, y: -1.52, z: -1}
+  m_LocalScale: {x: 0.5, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9057132560139064862}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &90007184803607511
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f9a407dd067238e469afc1812f70cb74, type: 3}
-  m_Color: {r: 0.57861626, g: 0.15448986, b: 0.103714176, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 08221df5110fbac4e8606eb0cfd4f331, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -124,6 +124,7 @@ Transform:
   - {fileID: 5844248437980971643}
   - {fileID: 2072461367679389912}
   - {fileID: 1414616135658324822}
+  - {fileID: 5878428826187114015}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2551027143345155244
@@ -201,7 +202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 114407589204240611}
-  - component: {fileID: 1916561662443326747}
+  - component: {fileID: 6113638934057844859}
   m_Layer: 0
   m_Name: SetWaterWidth3
   m_TagString: Untagged
@@ -224,7 +225,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8786504681785598387}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1916561662443326747
+--- !u!114 &6113638934057844859
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,12 +234,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 907056172172901230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ef5f9e0d47611f4da64c31fc24a95e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 302ff7b812c0d7846bbbf5b0db22ec81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: If (Counter == BreakPoint3) set the Y scale of object WaterFlow to
-    0.
+  _explanation: If (Counter == BreakPoint3) sets WaterFlow's sprite to [UNDEFINED]
   description: 
   enableAction: 1
   hasTags: 0
@@ -262,15 +262,11 @@ MonoBehaviour:
     comparisonValueHandler: {fileID: 7297495748450914879}
     comparisonVariable: {fileID: 0}
     percentageCompare: 0
-  target: {fileID: 5822044953486879573}
-  changeType: 2
-  xAxis: 0
-  positionX: {x: 0, y: 0}
-  deltaX: {x: 0, y: 0}
-  yAxis: 2
-  positionY: {x: 0, y: 0}
-  deltaY: {x: 0, y: 0}
-  scaleWithTime: 0
+  target: {fileID: 90007184803607511}
+  changeType: 0
+  sprite: {fileID: 0}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  boolState: 0
 --- !u!1 &1263769704127241631
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,10 +313,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _showInfo: 1
   _explanation: "When Minigame input is triggered:\n          adds 1 to variable
-    Counter\n          if (Counter == BreakPoint1) set the Y scale of object WaterFlow
-    to 0.3.\n          if (Counter == BreakPoint2) set the Y scale of object WaterFlow
-    to 0.1.\n          if (Counter == BreakPoint3) set the Y scale of object WaterFlow
-    to 0.\n          Mark Minigame to win\n"
+    Counter\n          if (Counter == BreakPoint1) sets WaterFlow's sprite to [water-flowing-3]\n         
+    if (Counter == BreakPoint2) sets WaterFlow's sprite to [water-flowing-5]\n         
+    if (Counter == BreakPoint3) sets WaterFlow's sprite to [UNDEFINED]\n         
+    Mark Minigame to win\n"
   description: 
   enableTrigger: 1
   allowRetrigger: 1
@@ -330,11 +326,11 @@ MonoBehaviour:
   - delay: 0
     action: {fileID: 1311786164630319675}
   - delay: 0
-    action: {fileID: 6722200668525584176}
+    action: {fileID: 4302873508837254739}
   - delay: 0
-    action: {fileID: 227262854377459665}
+    action: {fileID: 1222195488993241869}
   - delay: 0
-    action: {fileID: 1916561662443326747}
+    action: {fileID: 6113638934057844859}
   - delay: 0
     action: {fileID: 1239809564279295713}
   miniGame: {fileID: 2551027143345155244}
@@ -477,7 +473,7 @@ Transform:
   m_GameObject: {fileID: 1964579257960880046}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.26, y: -0.7, z: 0}
+  m_LocalPosition: {x: -6, y: 2.29, z: -2}
   m_LocalScale: {x: 1.584, y: 1.512583, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -524,7 +520,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9ecf1573858f67a48b65d99ea86f6bc9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8fa23214bcf45e841a19f3711edb8b15, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -619,6 +615,90 @@ MonoBehaviour:
     percentageCompare: 0
   minigame: {fileID: 2551027143345155244}
   hasWon: 1
+--- !u!1 &3106891930828246732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5878428826187114015}
+  - component: {fileID: 196883997452565382}
+  m_Layer: 0
+  m_Name: water-background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5878428826187114015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3106891930828246732}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.3, y: -0.57, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9057132560139064862}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &196883997452565382
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3106891930828246732}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c6d3e153a99e2414485d383da4c173fb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 19.2, y: 10.8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &4547450599569597459
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,9 +777,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4716997623750956946}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.14, y: 0.71, z: 0}
-  m_LocalScale: {x: 2, y: 1.5, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.84, y: 1.21, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9057132560139064862}
@@ -745,7 +825,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 68d3b1781e0c32548b5bc4958c33ea5f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64079d4f7ed61e54a88dbc51ca87d3de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -816,8 +896,8 @@ Transform:
   m_GameObject: {fileID: 6510219496629567632}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.81, y: -1.94, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalPosition: {x: 3.99, y: -4.56, z: -1}
+  m_LocalScale: {x: 0.66678, y: 1.2380701, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9057132560139064862}
@@ -863,7 +943,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 59e654ea889914f43aac8bad96319c2d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 80b47defa0e73f4438266de1e4d8b8c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -970,7 +1050,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4934164677940903247}
-  - component: {fileID: 6722200668525584176}
+  - component: {fileID: 4302873508837254739}
   m_Layer: 0
   m_Name: SetWaterWidth1
   m_TagString: Untagged
@@ -993,7 +1073,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8786504681785598387}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6722200668525584176
+--- !u!114 &4302873508837254739
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1002,12 +1082,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8030737046975532133}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ef5f9e0d47611f4da64c31fc24a95e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 302ff7b812c0d7846bbbf5b0db22ec81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: If (Counter == BreakPoint1) set the Y scale of object WaterFlow to
-    0.3.
+  _explanation: If (Counter == BreakPoint1) sets WaterFlow's sprite to [water-flowing-3]
   description: 
   enableAction: 1
   hasTags: 0
@@ -1031,15 +1110,11 @@ MonoBehaviour:
     comparisonValueHandler: {fileID: 5948207002006072669}
     comparisonVariable: {fileID: 0}
     percentageCompare: 0
-  target: {fileID: 5822044953486879573}
-  changeType: 2
-  xAxis: 0
-  positionX: {x: 0, y: 0}
-  deltaX: {x: 0, y: 0}
-  yAxis: 2
-  positionY: {x: 0.3, y: 0.3}
-  deltaY: {x: 0, y: 0}
-  scaleWithTime: 0
+  target: {fileID: 90007184803607511}
+  changeType: 0
+  sprite: {fileID: 21300000, guid: 1edc5d5ffb216ee45ac7e4c49a1e1433, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  boolState: 0
 --- !u!1 &8658186028862565138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,7 +1124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8665880977123683811}
-  - component: {fileID: 227262854377459665}
+  - component: {fileID: 1222195488993241869}
   m_Layer: 0
   m_Name: SetWaterWidth2
   m_TagString: Untagged
@@ -1072,7 +1147,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8786504681785598387}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &227262854377459665
+--- !u!114 &1222195488993241869
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1081,12 +1156,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8658186028862565138}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ef5f9e0d47611f4da64c31fc24a95e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 302ff7b812c0d7846bbbf5b0db22ec81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: If (Counter == BreakPoint2) set the Y scale of object WaterFlow to
-    0.1.
+  _explanation: If (Counter == BreakPoint2) sets WaterFlow's sprite to [water-flowing-5]
   description: 
   enableAction: 1
   hasTags: 0
@@ -1110,12 +1184,8 @@ MonoBehaviour:
     comparisonValueHandler: {fileID: 8351544834520635025}
     comparisonVariable: {fileID: 0}
     percentageCompare: 0
-  target: {fileID: 5822044953486879573}
-  changeType: 2
-  xAxis: 0
-  positionX: {x: 0, y: 0}
-  deltaX: {x: 0, y: 0}
-  yAxis: 2
-  positionY: {x: 0.1, y: 0.1}
-  deltaY: {x: 0, y: 0}
-  scaleWithTime: 0
+  target: {fileID: 90007184803607511}
+  changeType: 0
+  sprite: {fileID: 21300000, guid: ae24a3c220e6d704cbf9e0159260b621, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  boolState: 0

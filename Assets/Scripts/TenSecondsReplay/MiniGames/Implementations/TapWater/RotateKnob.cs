@@ -19,7 +19,7 @@ public class RotateKnob : MonoBehaviour
     {
         var angle = transform.eulerAngles;
 
-        angle.z = angle.z - 15;
+        angle.z = angle.z + 15;
 
         transform.eulerAngles = angle;
     }
