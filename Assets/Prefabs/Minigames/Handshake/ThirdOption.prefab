@@ -104,6 +104,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Hug
       objectReference: {fileID: 0}
+    - target: {fileID: 2228178360533550686, guid: 5d279e6a190bb51459259d38d4b471d9, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 4007504625835658767, guid: 5d279e6a190bb51459259d38d4b471d9, type: 3}
       propertyPath: m_Name
       value: ThirdOption
@@ -114,11 +118,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6258328936407755488, guid: 5d279e6a190bb51459259d38d4b471d9, type: 3}
       propertyPath: normalColor.a
-      value: 0.43137255
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6258328936407755488, guid: 5d279e6a190bb51459259d38d4b471d9, type: 3}
       propertyPath: normalColor.b
-      value: 0.41037738
+      value: 0.7028302
       objectReference: {fileID: 0}
     - target: {fileID: 6258328936407755488, guid: 5d279e6a190bb51459259d38d4b471d9, type: 3}
       propertyPath: normalColor.g
@@ -126,23 +130,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6258328936407755488, guid: 5d279e6a190bb51459259d38d4b471d9, type: 3}
       propertyPath: normalColor.r
-      value: 0.91081464
+      value: 0.954434
       objectReference: {fileID: 0}
     - target: {fileID: 6258328936407755488, guid: 5d279e6a190bb51459259d38d4b471d9, type: 3}
       propertyPath: highlightedColor.a
-      value: 0.7176471
-      objectReference: {fileID: 0}
-    - target: {fileID: 6258328936407755488, guid: 5d279e6a190bb51459259d38d4b471d9, type: 3}
-      propertyPath: highlightedColor.b
-      value: 0.3820755
-      objectReference: {fileID: 0}
-    - target: {fileID: 6258328936407755488, guid: 5d279e6a190bb51459259d38d4b471d9, type: 3}
-      propertyPath: highlightedColor.g
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6258328936407755488, guid: 5d279e6a190bb51459259d38d4b471d9, type: 3}
+      propertyPath: highlightedColor.b
+      value: 0.13803846
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258328936407755488, guid: 5d279e6a190bb51459259d38d4b471d9, type: 3}
+      propertyPath: highlightedColor.g
+      value: 0.8867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258328936407755488, guid: 5d279e6a190bb51459259d38d4b471d9, type: 3}
       propertyPath: highlightedColor.r
-      value: 0.6939881
+      value: 0.51715446
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

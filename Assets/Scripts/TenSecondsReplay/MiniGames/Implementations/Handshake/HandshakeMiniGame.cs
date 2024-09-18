@@ -21,6 +21,8 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
         [SerializeField] private float sliderPadding = 0.05f;
         [SerializeField] private Image person, bg;
         [SerializeField] private Transform arrowTransform;
+        [SerializeField] private ParticleSystem successParticle, failParticle;
+        [SerializeField] private ScaleAnimation answerAnim, bobAnim;
         
         private float alphaTimer = 0f;
         private bool isRunning = true;
@@ -46,6 +48,11 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
                 var option = Instantiate(prefab, optionParent);
                 spawnedOptions.Add(option);
             }
+
+            if (currentPrompt.id != "raghad") return;
+            var rnd = spawnedOptions.GetRandom();
+            rnd.SetId("raghad");
+            rnd.SetText("Greet from afar");
         }
 
         private void Update()
@@ -84,13 +91,18 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
         public override string PromptText => "Shake Hands!";
 
         public override void OnInput()
-        {
+        {   
             isRunning = false;
             HasWon = GetSelectedOption().Id.Equals(currentPrompt.id);
-            debugText.text = HasWon ? "Henllo :3" : "YOU DIED";
+            answerAnim.StartAnimation();
+            bobAnim.StopAnimation();
             
             arrowTransform.transform.localScale = Vector3.one * 1.2f;
             arrowTransform.DOScale(1f, 0.25f).SetEase(Ease.OutCirc);
+
+            var particle = HasWon ? successParticle : failParticle;
+            particle.Stop();
+            particle.Play();
         }
 
         public override void OnGameStart()

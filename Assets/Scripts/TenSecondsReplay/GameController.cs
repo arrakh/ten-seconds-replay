@@ -24,6 +24,8 @@ namespace TenSecondsReplay
         private float difficultyValue = 1f;
         private GameState state;
 
+        private int lastRandomIndex = int.MaxValue;
+
         private MiniGameObject currentMiniGame;
 
         private Coroutine gameCoroutine;
@@ -45,9 +47,17 @@ namespace TenSecondsReplay
         private void StartRandomMiniGame()
         {
             if (currentMiniGame != null) Destroy(currentMiniGame.gameObject);
+
+            int randIndex;
             
-            var randIndex = Random.Range(0, gamePrefabs.Length);
+            do
+            {
+                randIndex = Random.Range(0, gamePrefabs.Length);
+            } while (gamePrefabs.Length != 1 && randIndex == lastRandomIndex);
+                
             var randGame = gamePrefabs[randIndex];
+            lastRandomIndex = randIndex;
+
             
             #if UNITY_EDITOR
             if (useDebugMiniGame) randGame = gamePrefabs[debugMiniGameIndex];

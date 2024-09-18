@@ -11,6 +11,8 @@ namespace TenSecondsReplay.MiniGames.Implementations.Food
         public CutleryType Type => type;
 
         public void SetHighlight(bool isHighlighted)
-            => background.color = isHighlighted ? Color.white : Color.gray;
+        {
+            //background.color = isHighlighted ? Color.white : Color.gray;
+        }
     }
 }

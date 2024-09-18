@@ -172,10 +172,10 @@ MonoBehaviour:
   gameTimerUI: {fileID: 1354008995}
   gameOverUI: {fileID: 1798002883}
   promptTime: 2
-  gameTime: 99
+  gameTime: 5
   maxHealth: 3
   useDebugMiniGame: 1
-  debugMiniGameIndex: 3
+  debugMiniGameIndex: 0
 --- !u!4 &405253058
 Transform:
   m_ObjectHideFlags: 0
