@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using TenSecondsReplay.Utilities;
 using TMPro;
 using UnityEngine;
@@ -19,6 +20,7 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
         [SerializeField] private TextMeshProUGUI debugText;
         [SerializeField] private float sliderPadding = 0.05f;
         [SerializeField] private Image person, bg;
+        [SerializeField] private Transform arrowTransform;
         
         private float alphaTimer = 0f;
         private bool isRunning = true;
@@ -86,6 +88,9 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
             isRunning = false;
             HasWon = GetSelectedOption().Id.Equals(currentPrompt.id);
             debugText.text = HasWon ? "Henllo :3" : "YOU DIED";
+            
+            arrowTransform.transform.localScale = Vector3.one * 1.2f;
+            arrowTransform.DOScale(1f, 0.25f).SetEase(Ease.OutCirc);
         }
 
         public override void OnGameStart()

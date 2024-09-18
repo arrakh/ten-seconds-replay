@@ -21,5 +21,7 @@ namespace TenSecondsReplay.MiniGames.Implementations.Okapi
         {
             onGameStart?.Invoke();
         }
+
+        public void SetHasWon(bool won) => HasWon = won;
     }
 }

@@ -167,14 +167,15 @@ MonoBehaviour:
   - {fileID: 5896007278401056796, guid: a5661f590a3ec424e970257b994c67e8, type: 3}
   - {fileID: 1266823272403947838, guid: cced07338505d094bb7653175cfa7d17, type: 3}
   - {fileID: 3817815678057192347, guid: 1a6ac64d0484c3648b1cb6d47db0773b, type: 3}
+  - {fileID: 4702942489029109898, guid: 456fc19449b44d4499f4659194e2dec7, type: 3}
   promptSequenceUI: {fileID: 166145151}
   gameTimerUI: {fileID: 1354008995}
   gameOverUI: {fileID: 1798002883}
-  promptTime: 3
-  gameTime: 7
+  promptTime: 2
+  gameTime: 99
   maxHealth: 3
   useDebugMiniGame: 1
-  debugMiniGameIndex: 0
+  debugMiniGameIndex: 3
 --- !u!4 &405253058
 Transform:
   m_ObjectHideFlags: 0
@@ -749,6 +750,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1957973995063100592, guid: 8cc3cbc9788c13e45bacd756e7e1a840, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086983978215267655, guid: 8cc3cbc9788c13e45bacd756e7e1a840, type: 3}
+      propertyPath: m_text
+      value: New Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086983978215267655, guid: 8cc3cbc9788c13e45bacd756e7e1a840, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 9cc0615b7560b1d4d9cee4cd6a773dd3, type: 2}
+    - target: {fileID: 8086983978215267655, guid: 8cc3cbc9788c13e45bacd756e7e1a840, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086983978215267655, guid: 8cc3cbc9788c13e45bacd756e7e1a840, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2922507965948023476, guid: 9cc0615b7560b1d4d9cee4cd6a773dd3, type: 2}
+    - target: {fileID: 8086983978215267655, guid: 8cc3cbc9788c13e45bacd756e7e1a840, type: 3}
+      propertyPath: m_characterSpacing
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086983978215267655, guid: 8cc3cbc9788c13e45bacd756e7e1a840, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
