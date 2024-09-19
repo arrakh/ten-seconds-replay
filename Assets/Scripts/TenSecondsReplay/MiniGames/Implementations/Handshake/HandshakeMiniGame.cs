@@ -17,7 +17,6 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
         [SerializeField] private Transform optionParent;
         [SerializeField] private float pointerSpeed = 1f;
         [SerializeField] private int optionCount = 3;
-        [SerializeField] private TextMeshProUGUI debugText;
         [SerializeField] private float sliderPadding = 0.05f;
         [SerializeField] private Image person, bg;
         [SerializeField] private Transform arrowTransform;
@@ -88,7 +87,7 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
             pointer.value = Mathf.Lerp(sliderPadding, 1f - sliderPadding, alpha);
         }
 
-        public override string PromptText => "Shake Hands!";
+        public override string PromptText => "Greet the locals!";
 
         public override void OnInput()
         {   

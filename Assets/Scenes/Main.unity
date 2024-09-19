@@ -175,7 +175,7 @@ MonoBehaviour:
   gameTime: 5
   maxHealth: 3
   useDebugMiniGame: 1
-  debugMiniGameIndex: 0
+  debugMiniGameIndex: 1
 --- !u!4 &405253058
 Transform:
   m_ObjectHideFlags: 0
@@ -671,6 +671,10 @@ PrefabInstance:
     - target: {fileID: 422593451280615749, guid: 8cc3cbc9788c13e45bacd756e7e1a840, type: 3}
       propertyPath: m_Name
       value: PromptSequenceUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 422593451280615749, guid: 8cc3cbc9788c13e45bacd756e7e1a840, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1957973995063100592, guid: 8cc3cbc9788c13e45bacd756e7e1a840, type: 3}
       propertyPath: m_Pivot.x
