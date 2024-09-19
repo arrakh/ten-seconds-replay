@@ -1,6 +1,7 @@
 ﻿using System;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace TenSecondsReplay.Utilities
 {
@@ -14,6 +15,10 @@ namespace TenSecondsReplay.Utilities
         [SerializeField] private int loopCount;
         [SerializeField] private LoopType loopType;
 
+        [Header("Options")]
+        [SerializeField] private bool randomizeDuration;
+        [SerializeField] private float randomDurationRange;
+        
         private Tween tween;
         
         private void Start()
@@ -26,7 +31,12 @@ namespace TenSecondsReplay.Utilities
             StopAnimation();
 
             target.transform.localScale = from;
-            tween = target.DOScale(to, duration)
+            
+            var dur = randomizeDuration
+                ? Random.Range(duration - randomDurationRange, duration + randomDurationRange)
+                : duration;
+            
+            tween = target.DOScale(to, dur)
                 .SetEase(ease)
                 .SetLoops(loopCount, loopType);
         }

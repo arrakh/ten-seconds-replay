@@ -9,11 +9,10 @@ namespace TenSecondsReplay.MiniGames.Implementations.Photo
     public class PhotoCameraObject : MonoBehaviour
     {
         [SerializeField] private Rigidbody2D rigidbody2d;
-        [SerializeField] private Collider2D collider2d;
         [SerializeField] private float startingSpeed;
         [SerializeField] private float minimumDeviation = 0.2f;
+        [SerializeField] private PhotoCameraFrame frame;
 
-        private HashSet<Collider2D> subjects = new();
 
         private bool isStopped = false;
 
@@ -33,22 +32,12 @@ namespace TenSecondsReplay.MiniGames.Implementations.Photo
             return Mathf.Abs(value) < minimumDeviation ? minimumDeviation * Mathf.Sign(value) : value;
         }
 
-        public bool HasSubject() => subjects.Count > 0;
+        public bool HasSubject() => frame.HasSubject();
 
         public void Stop()
         {
             rigidbody2d.velocity = currentVelocity = Vector2.zero;
             isStopped = true;
-        }
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.gameObject.CompareTag("PhotoSubject")) subjects.Add(other);
-        }
-
-        private void OnTriggerExit2D(Collider2D other)
-        {
-            subjects.Remove(other);
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -64,6 +53,11 @@ namespace TenSecondsReplay.MiniGames.Implementations.Photo
             //Debug.Log($"VELOCITY {currentVelocity}, CONTACT {contact}, NORMAL {contactNormal}, REFLECTED {reflectedVelocity}");
 
             rigidbody2d.velocity = currentVelocity = reflectedVelocity;
+        }
+
+        public void TurnAllAngry()
+        {
+            frame.TurnAllAngry();
         }
     }
 }

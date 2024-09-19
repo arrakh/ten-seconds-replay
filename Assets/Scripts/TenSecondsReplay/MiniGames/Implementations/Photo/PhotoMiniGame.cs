@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using TenSecondsReplay.Utilities;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -8,11 +9,14 @@ namespace TenSecondsReplay.MiniGames.Implementations.Photo
 {
     public class PhotoMiniGame : MiniGameObject
     {
-        [SerializeField] private PhotoCameraObject cameraObject;
         [SerializeField] private PhotoFlashUI photoFlashUi;
-        [SerializeField] private GameObject[] subjects;
+        [SerializeField] private PhotoSubject[] subjects;
+        [SerializeField] private PhotoCameraObject[] cameras;
+        [SerializeField] private Sprite[] backgrounds;
+        [SerializeField] private SpriteRenderer backgroundRenderer;
         [SerializeField] private int startingSubjectCount = 4;
-        [SerializeField] private TextMeshProUGUI debugText;
+        
+        private PhotoCameraObject cameraObject;
         
         public override string PromptText => "Take a Picture!";
         public override void OnInput()
@@ -20,25 +24,31 @@ namespace TenSecondsReplay.MiniGames.Implementations.Photo
             cameraObject.Stop();
             photoFlashUi.Flash();
             HasWon = !cameraObject.HasSubject();
-
-            debugText.text = HasWon ? "Nice pic!" : "YOU DIED";
+            cameraObject.TurnAllAngry();
         }
 
         private void Start()
         {
+            backgroundRenderer.sprite = backgrounds.GetRandom();
+            
             var randomSubjects = subjects.ToList()
-                .OrderBy(x => Random.Range(0, subjects.Length))
+                .OrderBy(_ => Random.Range(0, subjects.Length))
                 .Take(startingSubjectCount);
 
             foreach (var subject in subjects)
-                subject.SetActive(false);
+                subject.gameObject.SetActive(false);
             
             foreach (var subject in randomSubjects)
-                subject.SetActive(true);
+                subject.gameObject.SetActive(true);
         }
 
         public override void OnGameStart()
         {
+            cameraObject = cameras.GetRandom();
+
+            foreach (var cam in cameras)
+                cam.gameObject.SetActive(cameraObject.Equals(cam));
+            
             cameraObject.StartMoving();
         }
     }
