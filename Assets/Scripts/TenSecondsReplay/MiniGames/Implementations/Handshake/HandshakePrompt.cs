@@ -9,5 +9,7 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
         public string id;
         public Sprite personSprite;
         public Sprite bgSprite;
+        public Sprite angrySprite;
+        public Sprite happySprite;
     }
 }

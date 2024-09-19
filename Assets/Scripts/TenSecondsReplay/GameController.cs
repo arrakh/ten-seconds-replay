@@ -1,5 +1,6 @@
 using System.Collections;
 using TenSecondsReplay.MiniGames;
+using TenSecondsReplay.Result;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -10,17 +11,18 @@ namespace TenSecondsReplay
     {
         [SerializeField] private KeyCode actionKey;
         [SerializeField] private MiniGameObject[] gamePrefabs;
-        [FormerlySerializedAs("promptUi")] [SerializeField] private PromptSequenceUI promptSequenceUI;
+        [SerializeField] private PromptSequenceUI promptSequenceUI;
+        [SerializeField] private ResultSequenceUI resultSequenceUI;
         [SerializeField] private GameTimerUI gameTimerUI;
         [SerializeField] private GameOverUI gameOverUI;
-        [SerializeField] private float promptTime, gameTime;
-        [SerializeField] private int maxHealth = 3;
+        [SerializeField] private float promptTime, gameTime, resultTime;
+        [SerializeField] private int maxFail = 3;
         
         [Header("DEBUG")] 
         [SerializeField] private bool useDebugMiniGame;
         [SerializeField] private int debugMiniGameIndex;
 
-        private int health, score;
+        private int fail, score;
         private float difficultyValue = 1f;
         private GameState state;
 
@@ -40,7 +42,7 @@ namespace TenSecondsReplay
 
         private void Start()
         {
-            health = maxHealth;
+            resultSequenceUI.Initialize(maxFail);
             StartRandomMiniGame();
         }
 
@@ -72,7 +74,7 @@ namespace TenSecondsReplay
         private IEnumerator StartGameCoroutine()
         {
             state = GameState.Prompt;
-            promptSequenceUI.Display(score, health, currentMiniGame);
+            promptSequenceUI.Display(currentMiniGame);
             
             yield return new WaitForSeconds(promptTime);
             promptSequenceUI.Hide();
@@ -82,10 +84,17 @@ namespace TenSecondsReplay
             gameTimerUI.Display(gameTime);
             yield return new WaitForSeconds(gameTime);
 
+            state = GameState.Result;
+
             EvaluateGame();
             
-            if (health > 0) StartRandomMiniGame();
+            resultSequenceUI.Display(score, fail);
+            yield return new WaitForSeconds(resultTime);
+
+            if (fail < maxFail) StartRandomMiniGame();
             else gameOverUI.Display(score);
+            
+            resultSequenceUI.Hide();
         }
 
         private void EvaluateGame()
@@ -93,7 +102,7 @@ namespace TenSecondsReplay
             var success = currentMiniGame.HasWon;
 
             if (success) score++;
-            else health--;
+            else fail++;
         }
     }
 }

@@ -1,61 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &146116010146500391
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 250698283331817097}
-  - component: {fileID: 3541221756040851931}
-  m_Layer: 0
-  m_Name: ShakeCap
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &250698283331817097
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 146116010146500391}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 254000562164691092}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3541221756040851931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 146116010146500391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 901970b618aa1c4489b6c7410f963e95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showInfo: 1
-  _explanation: Shakes the object [CapMain] with intensity 1 for 0.25 seconds
-  description: 
-  enableAction: 0
-  hasTags: 0
-  actionTags: []
-  hasConditions: 0
-  actionConditions: []
-  targetTag: {fileID: 0}
-  targetObject: {fileID: 254000562164691092}
-  strength: 1
-  duration: 0.25
 --- !u!1 &445110362908082803
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,8 +195,7 @@ Transform:
   m_LocalPosition: {x: -4.08, y: 2.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 250698283331817097}
+  m_Children: []
   m_Father: {fileID: 1374090972769205048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7227484777826688633
@@ -321,17 +264,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _showInfo: 1
   _explanation: "When Minigame input is triggered:\n          adds 1 to variable
-    Counter\n          shakes the object [CapMain] with intensity 1 for 0.25 seconds\n         
-    if (Counter == BreakPoint1) sets CapMain's sprite to [bottlecap2-water]\n         
-    if (Counter == BreakPoint2) sets CapMain's sprite to [bottlecap3-water]\n         
-    if (Counter == BreakPoint3) sets CapMain's sprite to [UNDEFINED]\n          if
-    (Counter == BreakPoint1) plays sound Open Sound at volume 1 and at pitch 1\n         
-    if (Counter == BreakPoint2) plays sound Open Sound at volume 1 and at pitch 1\n         
-    if (Counter == BreakPoint3) plays sound 607784__department64__water_flicks_splash_013
-    at volume 1 and at pitch 1\n          if (Counter == BreakPoint3) enables this
-    object\n          if (Counter == BreakPoint1) play particle system Debris_GravityUp_V3
-    (1)\n          if (Counter == BreakPoint2) play particle system Debris_GravityUp_V3
-    (1)\n          if (Counter == BreakPoint3) play particle system Debris_GravityUp_V3\n         
+    Counter\n          execute Unity event\n          if (Counter == BreakPoint1)
+    sets CapMain's sprite to [bottlecap2-water]\n          if (Counter == BreakPoint2)
+    sets CapMain's sprite to [bottlecap3-water]\n          if (Counter == BreakPoint3)
+    sets CapMain's sprite to [UNDEFINED]\n          if (Counter == BreakPoint1) plays
+    sound Open Sound at volume 1 and at pitch 1\n          if (Counter == BreakPoint2)
+    plays sound Open Sound at volume 1 and at pitch 1\n          if (Counter == BreakPoint3)
+    plays sound 607784__department64__water_flicks_splash_013 at volume 1 and at
+    pitch 1\n          if (Counter == BreakPoint3) enables this object\n         
+    if (Counter == BreakPoint1) play particle system Debris_GravityUp_V3 (1)\n         
+    if (Counter == BreakPoint2) play particle system Debris_GravityUp_V3 (1)\n         
+    if (Counter == BreakPoint3) play particle system Debris_GravityUp_V3\n         
     Mark Minigame to win\n"
   description: 
   enableTrigger: 1
@@ -342,7 +285,7 @@ MonoBehaviour:
   - delay: 0
     action: {fileID: 4336163172461523610}
   - delay: 0
-    action: {fileID: 3541221756040851931}
+    action: {fileID: 680842789671372858}
   - delay: 0
     action: {fileID: 193284409996100270}
   - delay: 0
@@ -1421,6 +1364,96 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 318db237a42e2824687173efc1ddf950, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   boolState: 0
+--- !u!1 &8137247668173391991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5011461805943434493}
+  - component: {fileID: 8554814681444395632}
+  - component: {fileID: 680842789671372858}
+  m_Layer: 0
+  m_Name: ShakeCap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5011461805943434493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137247668173391991}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1374090972769205048}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8554814681444395632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137247668173391991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33130dddc3bf4f239ea1676aefe7964a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 254000562164691092}
+  playOnStart: 1
+  shakeStrength: {x: 0.05, y: 0.05, z: 0}
+  duration: 0.2
+  ease: 0
+  loopCount: 0
+  loopType: 0
+  randomizeDuration: 1
+  randomDurationRange: 0.05
+--- !u!114 &680842789671372858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137247668173391991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7770dfe0b94ccf643bfc83ed5044b8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: Execute Unity event
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions: []
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8554814681444395632}
+        m_TargetAssemblyTypeName: TenSecondsReplay.Utilities.ShakePositionAnimation,
+          Assembly-CSharp
+        m_MethodName: StartAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8535136736902447702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1467,6 +1500,7 @@ Transform:
   - {fileID: 1084152931600257212}
   - {fileID: 2523911669725335435}
   - {fileID: 3212232960051869429}
+  - {fileID: 5011461805943434493}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4702942489029109898

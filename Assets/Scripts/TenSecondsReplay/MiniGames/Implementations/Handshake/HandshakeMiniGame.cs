@@ -102,6 +102,8 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
             var particle = HasWon ? successParticle : failParticle;
             particle.Stop();
             particle.Play();
+
+            person.sprite = HasWon ? currentPrompt.happySprite : currentPrompt.angrySprite;
         }
 
         public override void OnGameStart()

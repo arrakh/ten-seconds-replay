@@ -10,13 +10,9 @@ namespace TenSecondsReplay
         [SerializeField] private TextMeshProUGUI promptText;
         [SerializeField] private AudioClip promptAudio;
         [SerializeField] private GameObject holder;
-        [SerializeField] private TextMeshProUGUI healthText, scoreText;
         
-        public void Display(int score, int health, MiniGameObject miniGame)
+        public void Display(MiniGameObject miniGame)
         {
-            scoreText.text = score.ToString();
-            healthText.text = health.ToString();
-            
             holder.SetActive(true);
             
             promptText.text = miniGame.PromptText;

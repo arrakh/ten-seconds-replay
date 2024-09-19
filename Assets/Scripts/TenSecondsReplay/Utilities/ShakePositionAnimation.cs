@@ -1,15 +1,13 @@
-﻿using System;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace TenSecondsReplay.Utilities
 {
-    public class ScaleAnimation : MonoBehaviour
+    public class ShakePositionAnimation : MonoBehaviour
     {
         [SerializeField] private Transform target;
         [SerializeField] private bool playOnStart = true;
-        [SerializeField] private Vector3 from, to;
+        [SerializeField] private Vector3 shakeStrength;
         [SerializeField] private float duration;
         [SerializeField] private Ease ease;
         [SerializeField] private int loopCount;
@@ -29,14 +27,12 @@ namespace TenSecondsReplay.Utilities
         public void StartAnimation()
         {
             StopAnimation();
-
-            target.transform.localScale = from;
             
             var dur = randomizeDuration
                 ? Random.Range(duration - randomDurationRange, duration + randomDurationRange)
                 : duration;
             
-            tween = target.DOScale(to, dur)
+            tween = target.DOShakePosition(dur, shakeStrength)
                 .SetEase(ease)
                 .SetLoops(loopCount, loopType);
         }

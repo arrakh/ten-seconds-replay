@@ -33,7 +33,7 @@ namespace TenSecondsReplay
             if (currentTimer > 3f) timerText.text = $"{currentTimer:F0}";
             else timerText.text = $"{currentTimer:F1}";
 
-            timerImage.fillAmount = currentTimer / maxTimer;
+            //timerImage.fillAmount = currentTimer / maxTimer;
         }
     }
 }
