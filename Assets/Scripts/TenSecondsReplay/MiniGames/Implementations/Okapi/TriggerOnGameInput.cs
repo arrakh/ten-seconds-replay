@@ -7,6 +7,8 @@ namespace TenSecondsReplay.MiniGames.Implementations.Okapi
     public class TriggerOnGameInput : Trigger
     {
         [SerializeField] private OkapiMiniGame miniGame;
+
+        private Variable gameTime;
         
         public override string GetTriggerTitle() => "On Minigame Input";
 

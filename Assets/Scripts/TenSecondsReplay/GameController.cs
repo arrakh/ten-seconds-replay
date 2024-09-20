@@ -9,6 +9,9 @@ namespace TenSecondsReplay
 {
     public class GameController : MonoBehaviour
     {
+        public static float CurrentTimer => _currentTimer;
+        private static float _currentTimer;
+        
         [SerializeField] private KeyCode actionKey;
         [SerializeField] private MiniGameObject[] gamePrefabs;
         [SerializeField] private PromptSequenceUI promptSequenceUI;
@@ -38,6 +41,9 @@ namespace TenSecondsReplay
             
             if (Input.GetKeyDown(actionKey) || Input.GetMouseButtonDown(0)) 
                 currentMiniGame.OnInput();
+            
+            _currentTimer -= Time.deltaTime;
+            _currentTimer = Mathf.Clamp(_currentTimer, 0f, float.MaxValue);
         }
 
         private void Start()
@@ -81,7 +87,7 @@ namespace TenSecondsReplay
             
             state = GameState.Game;
             currentMiniGame.OnGameStart();
-            gameTimerUI.Display(gameTime);
+            _currentTimer = gameTime;
             yield return new WaitForSeconds(gameTime);
 
             state = GameState.Result;

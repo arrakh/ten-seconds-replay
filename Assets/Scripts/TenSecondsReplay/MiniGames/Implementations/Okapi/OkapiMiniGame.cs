@@ -1,11 +1,15 @@
 ﻿using System;
+using OkapiKit;
 using UnityEngine;
+using Action = System.Action;
 
 namespace TenSecondsReplay.MiniGames.Implementations.Okapi
 {
     public class OkapiMiniGame : MiniGameObject
     {
         [SerializeField] private string promptText;
+
+        private Variable gameTime;
 
         public override string PromptText => promptText;
 
@@ -23,5 +27,15 @@ namespace TenSecondsReplay.MiniGames.Implementations.Okapi
         }
 
         public void SetHasWon(bool won) => HasWon = won;
+
+        private void Update()
+        {
+            gameTime.SetValue(GameController.CurrentTimer);
+        }
+
+        private void Awake()
+        {
+            gameTime = Resources.Load<Variable>("MiniGameTime");
+        }
     }
 }

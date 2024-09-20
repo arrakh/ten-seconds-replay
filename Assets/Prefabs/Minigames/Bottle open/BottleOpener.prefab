@@ -1410,7 +1410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 254000562164691092}
-  playOnStart: 1
+  playOnStart: 0
   shakeStrength: {x: 0.05, y: 0.05, z: 0}
   duration: 0.2
   ease: 0
