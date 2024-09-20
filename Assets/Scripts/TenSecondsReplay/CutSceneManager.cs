@@ -4,8 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class CutSceneManager : MonoBehaviour
 {
-    public List<GameObject> cutsceneObjects; // List of canvases or game objects to display in sequence
-    public string mainGameSceneName = "Main"; // Name of the main game scene to load
+    public List<GameObject> cutsceneObjects; 
 
     private int currentObjectIndex = 0;
 
@@ -49,8 +48,7 @@ public class CutSceneManager : MonoBehaviour
 
     void LoadMainGameScene()
     {
-        // Load the main game scene
-        SceneManager.LoadScene(mainGameSceneName);
+        SceneManager.LoadScene("Main");
         Debug.Log("play main scene");
     }
 }
