@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 353173205455448202}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -500,8 +500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _showInfo: 1
   _explanation: "When Minigame input is triggered:\n          triggers the animation
-    parameter Trigger1 of object hand-crossing\n          if (TimePast5 == 1) enables
-    object backdrop2\n"
+    parameter Trigger1 of object hand-crossing\n"
   description: 
   enableTrigger: 1
   allowRetrigger: 1
@@ -510,8 +509,6 @@ MonoBehaviour:
   actions:
   - delay: 0
     action: {fileID: 3215142135589775297}
-  - delay: 0
-    action: {fileID: 8784544470097564122}
   miniGame: {fileID: 3314035705206662253}
 --- !u!114 &3215142135589775297
 MonoBehaviour:
@@ -756,77 +753,6 @@ MonoBehaviour:
     percentageCompare: 0
   target: {fileID: 124758878401244269}
   state: 0
---- !u!1 &6811544783052464220
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7345837708777048937}
-  - component: {fileID: 8784544470097564122}
-  m_Layer: 0
-  m_Name: EnableBackdrop2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &7345837708777048937
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6811544783052464220}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.57881707, y: 0.06963396, z: 0.0439209}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6440744630579971560}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8784544470097564122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6811544783052464220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c4cd7728b890f44ab45fb8ca143d36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showInfo: 1
-  _explanation: If (TimePast5 == 1) enables object backdrop2
-  description: 
-  enableAction: 1
-  hasTags: 0
-  actionTags: []
-  hasConditions: 1
-  actionConditions:
-  - negate: 0
-    valueHandler: {fileID: 5985309833495196632}
-    variable: {fileID: 0}
-    valueType: 0
-    tag: {fileID: 0}
-    tagCountRangeEnabled: 0
-    tagCountRange: 0
-    sourceTransform: {fileID: 0}
-    rigidBody: {fileID: 0}
-    axis: 0
-    probe: {fileID: 0}
-    movementPlatformer: {fileID: 0}
-    comparison: 0
-    value: 1
-    comparisonValueHandler: {fileID: 0}
-    comparisonVariable: {fileID: 0}
-    percentageCompare: 0
-  target: {fileID: 7308886818056436297}
-  state: 0
 --- !u!1 &6814905687323098446
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,7 +796,6 @@ Transform:
   - {fileID: 1000828664514042264}
   - {fileID: 2618644656287195955}
   - {fileID: 695343858425918765}
-  - {fileID: 7345837708777048937}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3314035705206662253
