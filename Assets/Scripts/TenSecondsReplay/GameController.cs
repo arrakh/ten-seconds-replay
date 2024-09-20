@@ -10,7 +10,9 @@ namespace TenSecondsReplay
     public class GameController : MonoBehaviour
     {
         public static float CurrentTimer => _currentTimer;
+        public static float CurrentMaxTimer => _currentMaxTimer;
         private static float _currentTimer;
+        private static float _currentMaxTimer;
         
         [SerializeField] private KeyCode actionKey;
         [SerializeField] private MiniGameObject[] gamePrefabs;
@@ -87,7 +89,7 @@ namespace TenSecondsReplay
             
             state = GameState.Game;
             currentMiniGame.OnGameStart();
-            _currentTimer = gameTime;
+            _currentTimer = _currentMaxTimer = gameTime;
             yield return new WaitForSeconds(gameTime);
 
             state = GameState.Result;

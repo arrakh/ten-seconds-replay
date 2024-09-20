@@ -10,6 +10,7 @@ namespace TenSecondsReplay.MiniGames.Implementations.Okapi
         [SerializeField] private string promptText;
 
         private Variable gameTime;
+        private Variable passedGameTime;
 
         public override string PromptText => promptText;
 
@@ -31,11 +32,13 @@ namespace TenSecondsReplay.MiniGames.Implementations.Okapi
         private void Update()
         {
             gameTime.SetValue(GameController.CurrentTimer);
+            passedGameTime.SetValue(GameController.CurrentMaxTimer - GameController.CurrentTimer);
         }
 
         private void Awake()
         {
             gameTime = Resources.Load<Variable>("MiniGameTime");
+            passedGameTime = Resources.Load<Variable>("PassedMiniGameTime");
         }
     }
 }
