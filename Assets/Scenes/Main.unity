@@ -169,6 +169,7 @@ MonoBehaviour:
   - {fileID: 3817815678057192347, guid: 1a6ac64d0484c3648b1cb6d47db0773b, type: 3}
   - {fileID: 4702942489029109898, guid: 456fc19449b44d4499f4659194e2dec7, type: 3}
   - {fileID: 2551027143345155244, guid: a92c85894a98bae45a5004a18dc704c4, type: 3}
+  - {fileID: 3314035705206662253, guid: 64c63b7801a0d5a4ba989c06924d4754, type: 3}
   promptSequenceUI: {fileID: 166145151}
   resultSequenceUI: {fileID: 7846924469424192914}
   gameTimerUI: {fileID: 1354008995}
@@ -177,8 +178,8 @@ MonoBehaviour:
   gameTime: 6
   resultTime: 3
   maxFail: 3
-  useDebugMiniGame: 0
-  debugMiniGameIndex: 4
+  useDebugMiniGame: 1
+  debugMiniGameIndex: 5
 --- !u!4 &405253058
 Transform:
   m_ObjectHideFlags: 0
