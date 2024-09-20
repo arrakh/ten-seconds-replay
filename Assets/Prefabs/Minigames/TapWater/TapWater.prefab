@@ -159,7 +159,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1edc5d5ffb216ee45ac7e4c49a1e1433, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.68235296, g: 0.26666668, b: 0.13725491, a: 0.85490197}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -237,6 +237,7 @@ Transform:
   - {fileID: 4924174482630230052}
   - {fileID: 6849238278528215891}
   - {fileID: 4112982750050052825}
+  - {fileID: 2335074188516340829}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2551027143345155244
@@ -251,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b8c9defac84354aeb3968b008726a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: 
+  promptText: Tap Water!
 --- !u!1 &615845401322345379
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +433,7 @@ MonoBehaviour:
     == BreakPoint1) enables object WaterState2\n          if (Counter == BreakPoint2)
     disables object WaterState2\n          if (Counter == BreakPoint2) enables object
     WaterState3\n          if (Counter == BreakPoint3) disables object WaterState3\n         
-    Mark Minigame to win\n"
+    if (Counter == BreakPoint3) execute Unity event\n          Mark Minigame to win\n"
   description: 
   enableTrigger: 1
   allowRetrigger: 1
@@ -457,6 +458,8 @@ MonoBehaviour:
     action: {fileID: 7285625809531525114}
   - delay: 0
     action: {fileID: 7401063916160863430}
+  - delay: 0
+    action: {fileID: 3057134598020668982}
   - delay: 0
     action: {fileID: 1239809564279295713}
   miniGame: {fileID: 2551027143345155244}
@@ -838,7 +841,7 @@ Transform:
   m_GameObject: {fileID: 3106891930828246732}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3, y: -0.11, z: 1}
+  m_LocalPosition: {x: -0.05, y: -0.23, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -896,6 +899,113 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3740090871526793203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2335074188516340829}
+  - component: {fileID: 8944417124811972870}
+  - component: {fileID: 3057134598020668982}
+  m_Layer: 0
+  m_Name: WiggleGlass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2335074188516340829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3740090871526793203}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.3339436, y: 0.18569279, z: -0.009240952}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9057132560139064862}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8944417124811972870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3740090871526793203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a850fd5064c4145866307384b0ca598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 6963403957291822351}
+  playOnStart: 0
+  from: {x: 1, y: 1, z: 1}
+  to: {x: 1.05, y: 0.95, z: 1}
+  duration: 0.3
+  ease: 22
+  loopCount: -1
+  loopType: 1
+  randomizeDuration: 1
+  randomDurationRange: 0.2
+--- !u!114 &3057134598020668982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3740090871526793203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7770dfe0b94ccf643bfc83ed5044b8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: If (Counter == BreakPoint3) execute Unity event
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 1
+  actionConditions:
+  - negate: 0
+    valueHandler: {fileID: 4380161175914106243}
+    variable: {fileID: 0}
+    valueType: 0
+    tag: {fileID: 0}
+    tagCountRangeEnabled: 0
+    tagCountRange: 0
+    sourceTransform: {fileID: 0}
+    rigidBody: {fileID: 0}
+    axis: 0
+    probe: {fileID: 0}
+    movementPlatformer: {fileID: 0}
+    comparison: 0
+    value: 0
+    comparisonValueHandler: {fileID: 7297495748450914879}
+    comparisonVariable: {fileID: 0}
+    percentageCompare: 0
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8944417124811972870}
+        m_TargetAssemblyTypeName: TenSecondsReplay.Utilities.ScaleAnimation, Assembly-CSharp
+        m_MethodName: StartAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3843748894004037484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,7 +1289,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 08221df5110fbac4e8606eb0cfd4f331, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6792453, g: 0.26293617, b: 0.13456738, a: 0.85490197}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1271,7 +1381,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.99, y: -4.56, z: -5}
-  m_LocalScale: {x: 0.66678, y: 1.2380701, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9057132560139064862}
@@ -1632,7 +1742,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ae24a3c220e6d704cbf9e0159260b621, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.68235296, g: 0.26666668, b: 0.13725491, a: 0.85490197}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
