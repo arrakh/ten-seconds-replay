@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace TenSecondsReplay
 {
@@ -45,7 +46,7 @@ namespace TenSecondsReplay
 
         private void OnMenuButton()
         {
-            
+            SceneManager.LoadScene("Menu");
         }
     }
 }
