@@ -828,19 +828,19 @@ MonoBehaviour:
     bgSprite: {fileID: 21300000, guid: 87ec9370d26b6174ba0c0109f38bf896, type: 3}
     angrySprite: {fileID: 21300000, guid: e70b03a620d6fc142bc0214c14109b59, type: 3}
     happySprite: {fileID: 21300000, guid: 099ab66824726534fb1a0396e5d1e4aa, type: 3}
-    ambienceSound: {fileID: 0}
+    ambienceSound: {fileID: 8300000, guid: aee14e490f1809646993593a08adf761, type: 3}
   - id: bow
     personSprite: {fileID: 21300000, guid: de3d2674ca5d0aa45aa5d0eadeb51ed6, type: 3}
     bgSprite: {fileID: 21300000, guid: 618a7354e4fa93c4ca61c296ed0da657, type: 3}
     angrySprite: {fileID: 21300000, guid: cfedc3e4a0a02514daa2109f91dd33b9, type: 3}
     happySprite: {fileID: 21300000, guid: 188dc13cd0f93284c9914b908e1ca9cf, type: 3}
-    ambienceSound: {fileID: 0}
+    ambienceSound: {fileID: 8300000, guid: c558596e4e4c3c44b8f2fcfdd5539720, type: 3}
   - id: raghad
     personSprite: {fileID: 21300000, guid: e3a4440f1dbba4d4cb016d71610de239, type: 3}
     bgSprite: {fileID: 21300000, guid: 08a0690e279647140baa0b3557212f2e, type: 3}
     angrySprite: {fileID: 21300000, guid: 68cd96f0b2cb09840b338b07bfdd7101, type: 3}
     happySprite: {fileID: 21300000, guid: 12872bc2efe6a724880b729664ed44d5, type: 3}
-    ambienceSound: {fileID: 0}
+    ambienceSound: {fileID: 8300000, guid: 5984c8e1bbe117b478219e980d25677f, type: 3}
   optionParent: {fileID: 4896307949338641915}
   pointerSpeed: 3
   optionCount: 3
