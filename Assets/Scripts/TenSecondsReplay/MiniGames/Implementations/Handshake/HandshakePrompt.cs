@@ -11,5 +11,6 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
         public Sprite bgSprite;
         public Sprite angrySprite;
         public Sprite happySprite;
+        public AudioClip ambienceSound;
     }
 }
