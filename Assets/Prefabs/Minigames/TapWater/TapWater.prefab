@@ -240,6 +240,7 @@ Transform:
   - {fileID: 2335074188516340829}
   - {fileID: 8047632435946012102}
   - {fileID: 5422918582733155946}
+  - {fileID: 7341937178514169806}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2551027143345155244
@@ -255,7 +256,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptText: Tap Water!
-  audioSource: {fileID: 6963126237923684484}
 --- !u!1 &615845401322345379
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,6 +393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8864330183169740244}
   - component: {fileID: 2771009517692712967}
+  - component: {fileID: 2128164295335606614}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -468,6 +469,47 @@ MonoBehaviour:
     action: {fileID: 1239809564279295713}
   - delay: 0
     action: {fileID: 8464166928193407448}
+  miniGame: {fileID: 2551027143345155244}
+--- !u!114 &2128164295335606614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263769704127241631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c165f02d81104d9fa8ad6dabee9c2082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: "When prompt ends and Minigame starts:\n          if (Counter < BreakPoint3)
+    plays sound waterrunning at volume 1 and at pitch 1\n"
+  description: 
+  enableTrigger: 1
+  allowRetrigger: 0
+  hasPreconditions: 0
+  preConditions:
+  - negate: 1
+    valueHandler: {fileID: 4380161175914106243}
+    variable: {fileID: 0}
+    valueType: 0
+    tag: {fileID: 0}
+    tagCountRangeEnabled: 0
+    tagCountRange: 0
+    sourceTransform: {fileID: 0}
+    rigidBody: {fileID: 0}
+    axis: 0
+    probe: {fileID: 0}
+    movementPlatformer: {fileID: 0}
+    comparison: 1
+    value: 0
+    comparisonValueHandler: {fileID: 7297495748450914879}
+    comparisonVariable: {fileID: 0}
+    percentageCompare: 0
+  actions:
+  - delay: 0
+    action: {fileID: 1918858339706552977}
   miniGame: {fileID: 2551027143345155244}
 --- !u!1 &1689346665293859656
 GameObject:
@@ -1604,7 +1646,7 @@ MonoBehaviour:
     percentageCompare: 0
   target: {fileID: 45245227421089461}
   state: 1
---- !u!1 &7159432743004797280
+--- !u!1 &6958247183494798981
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1612,113 +1654,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4207290451326051838}
-  - component: {fileID: 7489238941864182844}
+  - component: {fileID: 7341937178514169806}
+  - component: {fileID: 1522478454264852417}
   m_Layer: 0
-  m_Name: DisalbeWaterState1
+  m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4207290451326051838
+--- !u!4 &7341937178514169806
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7159432743004797280}
+  m_GameObject: {fileID: 6958247183494798981}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6943485, y: -0.24421477, z: -0.002945693}
+  m_LocalPosition: {x: 0.23174337, y: 0.14565834, z: -2.0051491}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9057132560139064862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7489238941864182844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7159432743004797280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c4cd7728b890f44ab45fb8ca143d36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showInfo: 1
-  _explanation: If (Counter == BreakPoint1) disables object WaterState1
-  description: 
-  enableAction: 1
-  hasTags: 0
-  actionTags: []
-  hasConditions: 1
-  actionConditions:
-  - negate: 0
-    valueHandler: {fileID: 4380161175914106243}
-    variable: {fileID: 0}
-    valueType: 0
-    tag: {fileID: 0}
-    tagCountRangeEnabled: 0
-    tagCountRange: 0
-    sourceTransform: {fileID: 0}
-    rigidBody: {fileID: 0}
-    axis: 0
-    probe: {fileID: 0}
-    movementPlatformer: {fileID: 0}
-    comparison: 0
-    value: 0
-    comparisonValueHandler: {fileID: 5948207002006072669}
-    comparisonVariable: {fileID: 0}
-    percentageCompare: 0
-  target: {fileID: 5785107282215939481}
-  state: 1
---- !u!1 &7460999450776701750
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5422918582733155946}
-  - component: {fileID: 6963126237923684484}
-  m_Layer: 0
-  m_Name: water sound
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5422918582733155946
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7460999450776701750}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 9057132560139064862}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &6963126237923684484
+--- !u!82 &1522478454264852417
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7460999450776701750}
+  m_GameObject: {fileID: 6958247183494798981}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c710de64097bd3349840a6a1c2077cb1, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1803,6 +1774,150 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &7159432743004797280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4207290451326051838}
+  - component: {fileID: 7489238941864182844}
+  m_Layer: 0
+  m_Name: DisalbeWaterState1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4207290451326051838
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7159432743004797280}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.6943485, y: -0.24421477, z: -0.002945693}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9057132560139064862}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7489238941864182844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7159432743004797280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c4cd7728b890f44ab45fb8ca143d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: If (Counter == BreakPoint1) disables object WaterState1
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 1
+  actionConditions:
+  - negate: 0
+    valueHandler: {fileID: 4380161175914106243}
+    variable: {fileID: 0}
+    valueType: 0
+    tag: {fileID: 0}
+    tagCountRangeEnabled: 0
+    tagCountRange: 0
+    sourceTransform: {fileID: 0}
+    rigidBody: {fileID: 0}
+    axis: 0
+    probe: {fileID: 0}
+    movementPlatformer: {fileID: 0}
+    comparison: 0
+    value: 0
+    comparisonValueHandler: {fileID: 5948207002006072669}
+    comparisonVariable: {fileID: 0}
+    percentageCompare: 0
+  target: {fileID: 5785107282215939481}
+  state: 1
+--- !u!1 &7460999450776701750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5422918582733155946}
+  - component: {fileID: 1918858339706552977}
+  m_Layer: 0
+  m_Name: water sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5422918582733155946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7460999450776701750}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9057132560139064862}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1918858339706552977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7460999450776701750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766d16681200cf841a49e1df59f6076f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: If (Counter <> BreakPoint2) plays sound waterrunning at volume 1
+    and at pitch 1
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 1
+  actionConditions:
+  - negate: 0
+    valueHandler: {fileID: 4380161175914106243}
+    variable: {fileID: 0}
+    valueType: 0
+    tag: {fileID: 0}
+    tagCountRangeEnabled: 0
+    tagCountRange: 0
+    sourceTransform: {fileID: 0}
+    rigidBody: {fileID: 0}
+    axis: 0
+    probe: {fileID: 0}
+    movementPlatformer: {fileID: 0}
+    comparison: 5
+    value: 0
+    comparisonValueHandler: {fileID: 8351544834520635025}
+    comparisonVariable: {fileID: 0}
+    percentageCompare: 0
+  clip: {fileID: 8300000, guid: c710de64097bd3349840a6a1c2077cb1, type: 3}
+  volume: {x: 1, y: 1}
+  pitch: {x: 1, y: 1}
 --- !u!1 &7526089986711335512
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,7 +2195,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4112982750050052825}
   - component: {fileID: 7401063916160863430}
-  - component: {fileID: 6351685329188418138}
   m_Layer: 0
   m_Name: DisalbeWaterState3
   m_TagString: Untagged
@@ -2141,45 +2255,6 @@ MonoBehaviour:
     comparisonVariable: {fileID: 0}
     percentageCompare: 0
   target: {fileID: 7568949292818417684}
-  state: 1
---- !u!114 &6351685329188418138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8404647457555859292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c4cd7728b890f44ab45fb8ca143d36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showInfo: 1
-  _explanation: If (Counter >= BreakPoint3) disables object water sound
-  description: 
-  enableAction: 1
-  hasTags: 0
-  actionTags: []
-  hasConditions: 1
-  actionConditions:
-  - negate: 0
-    valueHandler: {fileID: 4380161175914106243}
-    variable: {fileID: 0}
-    valueType: 0
-    tag: {fileID: 0}
-    tagCountRangeEnabled: 0
-    tagCountRange: 0
-    sourceTransform: {fileID: 0}
-    rigidBody: {fileID: 0}
-    axis: 0
-    probe: {fileID: 0}
-    movementPlatformer: {fileID: 0}
-    comparison: 4
-    value: 0
-    comparisonValueHandler: {fileID: 7297495748450914879}
-    comparisonVariable: {fileID: 0}
-    percentageCompare: 0
-  target: {fileID: 7460999450776701750}
   state: 1
 --- !u!1 &8658186028862565138
 GameObject:

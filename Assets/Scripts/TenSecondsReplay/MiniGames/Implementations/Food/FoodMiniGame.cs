@@ -15,6 +15,9 @@ namespace TenSecondsReplay.MiniGames.Implementations.Food
         [SerializeField] private float spinSpeed = 10;
         [SerializeField] private AudioSource beltSound, ambienceSound;
 
+        [SerializeField] private AudioClip correctAnswer, wrongAnswer;
+        [SerializeField] private AudioSource clickSound;
+
         private CutleryPrompt currentPrompt;
         private float currentPosition = 0f;
         private bool shouldSpin = false;
@@ -63,6 +66,9 @@ namespace TenSecondsReplay.MiniGames.Implementations.Food
                 throw new Exception($"OBJECT {cutleryCard.rectTransform.name} IS NOT A CUTLERY");
             
             Debug.Log($"Answered with {cutlery.Type}");
+
+            clickSound.clip = HasWon ? correctAnswer : wrongAnswer;
+            clickSound.Play();
 
             HasWon = cutlery.Type == currentPrompt.type;
         }

@@ -15,7 +15,8 @@ namespace TenSecondsReplay.MiniGames.Implementations.Photo
         [SerializeField] private Sprite[] backgrounds;
         [SerializeField] private SpriteRenderer backgroundRenderer;
         [SerializeField] private int startingSubjectCount = 4;
-        
+        [SerializeField] private AudioSource ambienceSound;
+
         private PhotoCameraObject cameraObject;
         
         public override string PromptText => "Take a Picture!";
@@ -44,12 +45,14 @@ namespace TenSecondsReplay.MiniGames.Implementations.Photo
 
         public override void OnGameStart()
         {
+            ambienceSound.Play();
             cameraObject = cameras.GetRandom();
 
             foreach (var cam in cameras)
                 cam.gameObject.SetActive(cameraObject.Equals(cam));
             
             cameraObject.StartMoving();
+
         }
     }
 }
