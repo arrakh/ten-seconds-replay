@@ -9,7 +9,8 @@ namespace TenSecondsReplay.Result
         [SerializeField] private RectTransform rectTransform;
         [SerializeField] private Image image;
         [SerializeField] private ParticleSystem smokeLand;
-        
+        [SerializeField] private AudioSource stampSound;
+
         [Header("Twist Animation")]
         [SerializeField] private float twistDuration = 0.4f;
         [SerializeField] private float twistScaleFrom = 1.2f;
@@ -55,6 +56,8 @@ namespace TenSecondsReplay.Result
             popScale?.Kill();
             image.transform.localScale = Vector3.one * popScaleFrom;
             popScale = image.transform.DOScale(Vector3.one, popDuration).SetEase(popScaleCurve);
+            stampSound.Play();
+
         }
     }
 }

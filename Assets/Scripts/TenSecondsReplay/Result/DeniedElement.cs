@@ -9,6 +9,7 @@ namespace TenSecondsReplay.Result
         [SerializeField] private GameObject filledGroup;
         [SerializeField] private Image image;
         [SerializeField] private ParticleSystem landParticle;
+        [SerializeField] private AudioSource stampSound;
 
         [Header("Twist Animation")]
         [SerializeField] private float twistDuration = 0.4f;
@@ -53,6 +54,7 @@ namespace TenSecondsReplay.Result
             
             shake?.Kill();
             shake = transform.DOShakePosition(shakeDuration, new Vector3(shakeStrength, 0f));
+            stampSound.Play();
         }
     }
 }

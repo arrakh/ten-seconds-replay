@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223d46a5f1904cf584a13315f8e38099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionKey: 122
+  actionKey: 32
   gamePrefabs:
   - {fileID: 1266823272403947838, guid: cced07338505d094bb7653175cfa7d17, type: 3}
   - {fileID: 3817815678057192347, guid: 1a6ac64d0484c3648b1cb6d47db0773b, type: 3}
