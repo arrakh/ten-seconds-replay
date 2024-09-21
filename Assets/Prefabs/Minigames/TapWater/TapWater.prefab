@@ -2155,7 +2155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: If (Counter == BreakPoint3) disables this object
+  _explanation: If (Counter >= BreakPoint3) disables object water sound
   description: 
   enableAction: 1
   hasTags: 0
@@ -2174,7 +2174,7 @@ MonoBehaviour:
     axis: 0
     probe: {fileID: 0}
     movementPlatformer: {fileID: 0}
-    comparison: 0
+    comparison: 4
     value: 0
     comparisonValueHandler: {fileID: 7297495748450914879}
     comparisonVariable: {fileID: 0}

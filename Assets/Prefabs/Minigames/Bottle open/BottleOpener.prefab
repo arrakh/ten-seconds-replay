@@ -534,13 +534,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: Plays sound bottlecap at volume 1 and at pitch 1
+  _explanation: If (Counter < BreakPoint3) plays sound bottlecap at volume 1 and
+    at pitch 1
   description: 
   enableAction: 1
   hasTags: 0
   actionTags: []
-  hasConditions: 0
-  actionConditions: []
+  hasConditions: 1
+  actionConditions:
+  - negate: 0
+    valueHandler: {fileID: 7504135180958746019}
+    variable: {fileID: 0}
+    valueType: 0
+    tag: {fileID: 0}
+    tagCountRangeEnabled: 0
+    tagCountRange: 0
+    sourceTransform: {fileID: 0}
+    rigidBody: {fileID: 0}
+    axis: 0
+    probe: {fileID: 0}
+    movementPlatformer: {fileID: 0}
+    comparison: 1
+    value: 0
+    comparisonValueHandler: {fileID: 7648453242567309242}
+    comparisonVariable: {fileID: 0}
+    percentageCompare: 0
   clip: {fileID: 8300000, guid: d0631bf31207fc8489499d734ad1bcb9, type: 3}
   volume: {x: 1, y: 1}
   pitch: {x: 1, y: 1}

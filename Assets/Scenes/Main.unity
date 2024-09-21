@@ -178,7 +178,7 @@ MonoBehaviour:
   gameTime: 6
   resultTime: 3
   maxFail: 3
-  useDebugMiniGame: 1
+  useDebugMiniGame: 0
   debugMiniGameIndex: 5
 --- !u!4 &405253058
 Transform:

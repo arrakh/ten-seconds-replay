@@ -11,6 +11,7 @@ namespace TenSecondsReplay.Result
         [SerializeField] private ApprovalElement approvalPrefab;
         [SerializeField] private RectTransform approvalArea;
         [SerializeField] private RectTransform deniedParent;
+        [SerializeField] private AudioSource stampSound;
 
         [Header("Scale Animation")] 
         [SerializeField] private AnimationCurve scaleCurve;
@@ -41,6 +42,8 @@ namespace TenSecondsReplay.Result
 
             if (score > lastScore) AddScore(score - lastScore);
             if (failAmount > lastFail) AddFail(failAmount - lastFail);
+
+            stampSound.Play();
 
             lastFail = failAmount;
             lastScore = score;

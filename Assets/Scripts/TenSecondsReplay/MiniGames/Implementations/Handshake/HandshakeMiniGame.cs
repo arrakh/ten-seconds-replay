@@ -14,6 +14,8 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
         [SerializeField] private Slider pointer;
         [SerializeField] private HandshakeOption[] possibleOptionsPrefab;
         [SerializeField] private HandshakePrompt[] prompts;
+        [SerializeField] private AudioClip correctAnswer, wrongAnswer;
+        [SerializeField] private AudioSource clickSound;
         [SerializeField] private Transform optionParent;
         [SerializeField] private float pointerSpeed = 1f;
         [SerializeField] private int optionCount = 3;
@@ -97,7 +99,10 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
             HasWon = GetSelectedOption().Id.Equals(currentPrompt.id);
             answerAnim.StartAnimation();
             bobAnim.StopAnimation();
-            
+
+            clickSound.clip = HasWon ? correctAnswer : wrongAnswer;
+            clickSound.Play();
+
             arrowTransform.transform.localScale = Vector3.one * 1.2f;
             arrowTransform.DOScale(1f, 0.25f).SetEase(Ease.OutCirc);
 
