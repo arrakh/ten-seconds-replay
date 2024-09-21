@@ -268,14 +268,14 @@ MonoBehaviour:
     sets CapMain's sprite to [bottlecap2-water]\n          if (Counter == BreakPoint2)
     sets CapMain's sprite to [bottlecap3-water]\n          if (Counter == BreakPoint3)
     sets CapMain's sprite to [UNDEFINED]\n          if (Counter == BreakPoint1) plays
-    sound Open Sound at volume 1 and at pitch 1\n          if (Counter == BreakPoint2)
-    plays sound Open Sound at volume 1 and at pitch 1\n          if (Counter == BreakPoint3)
-    plays sound 607784__department64__water_flicks_splash_013 at volume 1 and at
-    pitch 1\n          if (Counter == BreakPoint3) enables this object\n         
-    if (Counter == BreakPoint1) play particle system Debris_GravityUp_V3 (1)\n         
-    if (Counter == BreakPoint2) play particle system Debris_GravityUp_V3 (1)\n         
-    if (Counter == BreakPoint3) play particle system Debris_GravityUp_V3\n         
-    Mark Minigame to win\n"
+    an undefined sound at volume 1 and at pitch 1\n          if (Counter == BreakPoint2)
+    plays an undefined sound at volume 1 and at pitch 1\n          if (Counter ==
+    BreakPoint3) plays an undefined sound at volume 1 and at pitch 1\n          if
+    (Counter == BreakPoint3) enables this object\n          if (Counter == BreakPoint1)
+    play particle system Debris_GravityUp_V3 (1)\n          if (Counter == BreakPoint2)
+    play particle system Debris_GravityUp_V3 (1)\n          if (Counter == BreakPoint3)
+    play particle system Debris_GravityUp_V3\n          Mark Minigame to win\n         
+    plays sound bottlecap at volume 1 and at pitch 1\n"
   description: 
   enableTrigger: 1
   allowRetrigger: 1
@@ -308,6 +308,8 @@ MonoBehaviour:
     action: {fileID: 1020224214697068637}
   - delay: 0
     action: {fileID: 895546271217142102}
+  - delay: 0
+    action: {fileID: 7060977653646859810}
   miniGame: {fileID: 4702942489029109898}
 --- !u!1 &1702734841082029019
 GameObject:
@@ -487,6 +489,61 @@ MonoBehaviour:
   sprite: {fileID: 0}
   color: {r: 1, g: 1, b: 1, a: 0.654902}
   boolState: 0
+--- !u!1 &3339061765985447448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9074470273729455995}
+  - component: {fileID: 7060977653646859810}
+  m_Layer: 0
+  m_Name: bottlecap sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9074470273729455995
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3339061765985447448}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1374090972769205048}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7060977653646859810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3339061765985447448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766d16681200cf841a49e1df59f6076f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: Plays sound bottlecap at volume 1 and at pitch 1
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions: []
+  clip: {fileID: 8300000, guid: d0631bf31207fc8489499d734ad1bcb9, type: 3}
+  volume: {x: 1, y: 1}
+  pitch: {x: 1, y: 1}
 --- !u!1 &3420415134741660034
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,8 +589,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: If (Counter == BreakPoint2) plays sound Open Sound at volume 1 and
-    at pitch 1
+  _explanation: If (Counter == BreakPoint2) plays an undefined sound at volume 1
+    and at pitch 1
   description: 
   enableAction: 1
   hasTags: 0
@@ -662,6 +719,134 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1374090972769205048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5858601243291748905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8751937257517570642}
+  - component: {fileID: 6652594540009605789}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8751937257517570642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5858601243291748905}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1374090972769205048}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &6652594540009605789
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5858601243291748905}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5947266191463403871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,8 +1218,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: If (Counter == BreakPoint3) plays sound 607784__department64__water_flicks_splash_013
-    at volume 1 and at pitch 1
+  _explanation: If (Counter == BreakPoint3) plays sound bottleopen at volume 1 and
+    at pitch 1
   description: 
   enableAction: 1
   hasTags: 0
@@ -1058,7 +1243,7 @@ MonoBehaviour:
     comparisonValueHandler: {fileID: 7648453242567309242}
     comparisonVariable: {fileID: 0}
     percentageCompare: 0
-  clip: {fileID: 8300000, guid: 02a5c7f850bd6044fbe6b39ada39defc, type: 3}
+  clip: {fileID: 8300000, guid: 76452ddf0855dca4ba2478606eb5c431, type: 3}
   volume: {x: 1, y: 1}
   pitch: {x: 1, y: 1}
 --- !u!1 &6897664534625048370
@@ -1106,7 +1291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: If (Counter == BreakPoint3) enables object water-flowing-1
+  _explanation: If (Counter == BreakPoint3) enables this object
   description: 
   enableAction: 1
   hasTags: 0
@@ -1501,6 +1686,8 @@ Transform:
   - {fileID: 2523911669725335435}
   - {fileID: 3212232960051869429}
   - {fileID: 5011461805943434493}
+  - {fileID: 8751937257517570642}
+  - {fileID: 9074470273729455995}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4702942489029109898
@@ -1516,6 +1703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptText: Open to drink!
+  audioSource: {fileID: 6652594540009605789}
 --- !u!1 &8550939047534959769
 GameObject:
   m_ObjectHideFlags: 0
@@ -1561,8 +1749,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: If (Counter == BreakPoint1) plays sound Open Sound at volume 1 and
-    at pitch 1
+  _explanation: If (Counter == BreakPoint1) plays an undefined sound at volume 1
+    and at pitch 1
   description: 
   enableAction: 1
   hasTags: 0
