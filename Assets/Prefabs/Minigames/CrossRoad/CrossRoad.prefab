@@ -168,6 +168,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &673270719671933593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7083497591317362388}
+  m_Layer: 0
+  m_Name: LightSwitch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7083497591317362388
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673270719671933593}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3.5000002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5268908895982342222}
+  - {fileID: 2509092939302096772}
+  - {fileID: 1000828664514042264}
+  - {fileID: 2618644656287195955}
+  m_Father: {fileID: 6440744630579971560}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &707718398123249692
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,11 +229,11 @@ Transform:
   m_GameObject: {fileID: 707718398123249692}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2476404, y: -0.49061292, z: 0.042337928}
+  m_LocalPosition: {x: 0.2476404, y: -0.49061292, z: -3.4576623}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6440744630579971560}
+  m_Father: {fileID: 7859664277236587722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &243208482297706478
 MonoBehaviour:
@@ -213,7 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: If (PassedMiniGameTime >= 5) sets variable TimePast5 to 1
+  _explanation: If (PassedMiniGameTime >= 5) sets variable TimePast5Bool to 1
   description: 
   enableAction: 1
   hasTags: 0
@@ -270,11 +305,11 @@ Transform:
   m_GameObject: {fileID: 1091268693382591100}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2476404, y: -0.49061292, z: 0.042337928}
+  m_LocalPosition: {x: 0.2476404, y: -0.49061292, z: -3.4576623}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6440744630579971560}
+  m_Father: {fileID: 7083497591317362388}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2382314720346086287
 MonoBehaviour:
@@ -289,7 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: If (TimePast5 == 1) disables object red-light-crossing
+  _explanation: If (TimePast5Bool == 1) disables object red-light-crossing
   description: 
   enableAction: 1
   hasTags: 0
@@ -315,6 +350,59 @@ MonoBehaviour:
     percentageCompare: 0
   target: {fileID: 1708267509788040117}
   state: 1
+--- !u!1 &1107816408534132591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4718263923375714529}
+  - component: {fileID: 9171131718679360762}
+  m_Layer: 0
+  m_Name: TestVar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4718263923375714529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107816408534132591}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3.5000002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6440744630579971560}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9171131718679360762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107816408534132591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c124f990a067b478caf900b6cb6d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: 
+  description: 
+  type: 1
+  currentValue: 0
+  defaultValue: 0
+  hasLimits: 0
+  minValue: -3.4028235e+38
+  maxValue: 3.4028235e+38
 --- !u!1 &1708267509788040117
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +487,77 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1902128579437525469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7281345692330703527}
+  - component: {fileID: 2808264421926053828}
+  m_Layer: 0
+  m_Name: SetWinCon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7281345692330703527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902128579437525469}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.3533413, y: -1.1492941, z: 3.0783126}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6440744630579971560}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2808264421926053828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902128579437525469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f657165505f34256b7ea5cd7a84a3bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: Mark Minigame to win
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 1
+  actionConditions:
+  - negate: 0
+    valueHandler: {fileID: 9171131718679360762}
+    variable: {fileID: 0}
+    valueType: 0
+    tag: {fileID: 0}
+    tagCountRangeEnabled: 0
+    tagCountRange: 0
+    sourceTransform: {fileID: 0}
+    rigidBody: {fileID: 0}
+    axis: 0
+    probe: {fileID: 0}
+    movementPlatformer: {fileID: 0}
+    comparison: 0
+    value: 1
+    comparisonValueHandler: {fileID: 0}
+    comparisonVariable: {fileID: 0}
+    percentageCompare: 0
+  minigame: {fileID: 3314035705206662253}
+  hasWon: 1
 --- !u!1 &2205207336433685748
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,7 +569,7 @@ GameObject:
   - component: {fileID: 2822914814755937768}
   - component: {fileID: 5985309833495196632}
   m_Layer: 0
-  m_Name: TimePast5
+  m_Name: TimePast5Bool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -425,11 +584,11 @@ Transform:
   m_GameObject: {fileID: 2205207336433685748}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.43437222, y: -0.17710274, z: 0.06902558}
+  m_LocalPosition: {x: -0.43437222, y: -0.17710274, z: -3.4309747}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6440744630579971560}
+  m_Father: {fileID: 7859664277236587722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5985309833495196632
 MonoBehaviour:
@@ -500,7 +659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _showInfo: 1
   _explanation: "When Minigame input is triggered:\n          triggers the animation
-    parameter Trigger1 of object hand-crossing\n"
+    parameter Trigger1 of object hand-crossing\n          Mark Minigame to lose\n"
   description: 
   enableTrigger: 1
   allowRetrigger: 1
@@ -509,6 +668,8 @@ MonoBehaviour:
   actions:
   - delay: 0
     action: {fileID: 3215142135589775297}
+  - delay: 0
+    action: {fileID: 2808264421926053828}
   miniGame: {fileID: 3314035705206662253}
 --- !u!114 &3215142135589775297
 MonoBehaviour:
@@ -708,11 +869,11 @@ Transform:
   m_GameObject: {fileID: 4915421888797269075}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2476404, y: -0.49061292, z: 0.042337928}
+  m_LocalPosition: {x: 0.2476404, y: -0.49061292, z: -3.4576623}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6440744630579971560}
+  m_Father: {fileID: 7083497591317362388}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9047209236297026925
 MonoBehaviour:
@@ -727,7 +888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: If (TimePast5 == 1) enables object green-light-crossing
+  _explanation: If (TimePast5Bool == 1) enables object green-light-crossing
   description: 
   enableAction: 1
   hasTags: 0
@@ -753,6 +914,40 @@ MonoBehaviour:
     percentageCompare: 0
   target: {fileID: 124758878401244269}
   state: 0
+--- !u!1 &5153439610766623338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7859664277236587722}
+  m_Layer: 0
+  m_Name: Time
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7859664277236587722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5153439610766623338}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3.5000002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2822914814755937768}
+  - {fileID: 4859823036083074914}
+  - {fileID: 8326731470038664322}
+  m_Father: {fileID: 6440744630579971560}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6814905687323098446
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,19 +978,16 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1947599148731267298}
   - {fileID: 7938680122973289932}
   - {fileID: 6413643006520972023}
   - {fileID: 2722459004353246509}
   - {fileID: 1067760703105676269}
-  - {fileID: 1947599148731267298}
-  - {fileID: 2822914814755937768}
-  - {fileID: 4859823036083074914}
-  - {fileID: 8326731470038664322}
-  - {fileID: 5268908895982342222}
-  - {fileID: 2509092939302096772}
-  - {fileID: 1000828664514042264}
-  - {fileID: 2618644656287195955}
+  - {fileID: 7083497591317362388}
+  - {fileID: 7859664277236587722}
   - {fileID: 695343858425918765}
+  - {fileID: 7281345692330703527}
+  - {fileID: 4718263923375714529}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3314035705206662253
@@ -837,11 +1029,11 @@ Transform:
   m_GameObject: {fileID: 7129044105708711413}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2476404, y: -0.49061292, z: 0.042337928}
+  m_LocalPosition: {x: 0.2476404, y: -0.49061292, z: -3.4576623}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6440744630579971560}
+  m_Father: {fileID: 7083497591317362388}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1360778582425878725
 MonoBehaviour:
@@ -856,7 +1048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: If (TimePast5 == 0) enables object red-light-crossing
+  _explanation: If (TimePast5Bool == 0) enables object red-light-crossing
   description: 
   enableAction: 1
   hasTags: 0
@@ -992,11 +1184,11 @@ Transform:
   m_GameObject: {fileID: 7863477724798536035}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2476404, y: -0.49061292, z: 0.042337928}
+  m_LocalPosition: {x: 0.2476404, y: -0.49061292, z: -3.4576623}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6440744630579971560}
+  m_Father: {fileID: 7859664277236587722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6596304155929089773
 MonoBehaviour:
@@ -1011,7 +1203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: If (PassedMiniGameTime < 5) sets variable TimePast5 to 0
+  _explanation: If (PassedMiniGameTime < 5) sets variable TimePast5Bool to 0
   description: 
   enableAction: 1
   hasTags: 0
@@ -1068,11 +1260,11 @@ Transform:
   m_GameObject: {fileID: 8831900319097935396}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2476404, y: -0.49061292, z: 0.042337928}
+  m_LocalPosition: {x: 0.2476404, y: -0.49061292, z: -3.4576623}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6440744630579971560}
+  m_Father: {fileID: 7083497591317362388}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2427284659939728494
 MonoBehaviour:
@@ -1087,7 +1279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: If (TimePast5 == 0) disables object green-light-crossing
+  _explanation: If (TimePast5Bool == 0) disables object green-light-crossing
   description: 
   enableAction: 1
   hasTags: 0
