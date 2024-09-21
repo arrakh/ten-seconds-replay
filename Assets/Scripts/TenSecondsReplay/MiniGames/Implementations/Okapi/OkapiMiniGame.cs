@@ -8,6 +8,7 @@ namespace TenSecondsReplay.MiniGames.Implementations.Okapi
     public class OkapiMiniGame : MiniGameObject
     {
         [SerializeField] private string promptText;
+        [SerializeField] private AudioSource audioSource;
 
         private Variable gameTime;
         private Variable passedGameTime;
@@ -25,6 +26,8 @@ namespace TenSecondsReplay.MiniGames.Implementations.Okapi
         public override void OnGameStart()
         {
             onGameStart?.Invoke();
+            // AudioSource audio = GetComponent<AudioSource>();
+            audioSource.Play();
         }
 
         public void SetHasWon(bool won) => HasWon = won;
