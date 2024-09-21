@@ -881,6 +881,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PromptSequenceUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1186744142544427071, guid: 8cc3cbc9788c13e45bacd756e7e1a840, type: 3}
+      propertyPath: promptAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 89ef7a3c41dbe744ab8eb2598ff2a910, type: 3}
     - target: {fileID: 1957973995063100592, guid: 8cc3cbc9788c13e45bacd756e7e1a840, type: 3}
       propertyPath: m_Pivot.x
       value: 0
