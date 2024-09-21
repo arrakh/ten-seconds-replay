@@ -1009,6 +1009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptText: Don't Jaywalk!
+  audioSource: {fileID: 5604399806328447897}
 --- !u!82 &5604399806328447897
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1020,7 +1021,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ad1f48efccf725548a57e3edcc902f16, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

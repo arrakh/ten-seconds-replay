@@ -13,6 +13,7 @@ namespace TenSecondsReplay.MiniGames.Implementations.Food
         [SerializeField] private CutleryElement[] cutleries;
         [SerializeField] private CutleryPrompt[] prompts;
         [SerializeField] private float spinSpeed = 10;
+        [SerializeField] private AudioSource beltSound, ambienceSound;
 
         private CutleryPrompt currentPrompt;
         private float currentPosition = 0f;
@@ -22,9 +23,6 @@ namespace TenSecondsReplay.MiniGames.Implementations.Food
         {
             currentPrompt = prompts.GetRandom();
             Debug.Log($"Current Promt is {currentPrompt.type}");
-            AudioSource audio = GetComponent<AudioSource>();
-            audio.clip = currentPrompt.ambienceSound;
-            audio.Play();
             foodImage.sprite = currentPrompt.image;
             spinner.Setup(cutleries.Select(x => x.transform as RectTransform).ToList());
         }
@@ -56,6 +54,8 @@ namespace TenSecondsReplay.MiniGames.Implementations.Food
         public override string PromptText => "Try your dish!";
         public override void OnInput()
         {
+            beltSound.Stop();
+
             shouldSpin = false;
             var cutleryCard = spinner.GetElementAtNormalizedPosition(0.5f);
 
@@ -70,6 +70,8 @@ namespace TenSecondsReplay.MiniGames.Implementations.Food
         public override void OnGameStart()
         {
             shouldSpin = true;
+            beltSound.Play();
+            ambienceSound.Play();
         }
     }
 }
