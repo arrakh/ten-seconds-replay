@@ -33,6 +33,11 @@ namespace TenSecondsReplay.MiniGames.Implementations.Handshake
             currentPrompt = prompts.GetRandom();
             person.sprite = currentPrompt.personSprite;
             bg.sprite = currentPrompt.bgSprite;
+
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.clip = currentPrompt.ambienceSound;
+            audio.Play();
+
             SpawnOptions();
         }
 

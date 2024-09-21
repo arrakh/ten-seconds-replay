@@ -22,6 +22,9 @@ namespace TenSecondsReplay.MiniGames.Implementations.Food
         {
             currentPrompt = prompts.GetRandom();
             Debug.Log($"Current Promt is {currentPrompt.type}");
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.clip = currentPrompt.ambienceSound;
+            audio.Play();
             foodImage.sprite = currentPrompt.image;
             spinner.Setup(cutleries.Select(x => x.transform as RectTransform).ToList());
         }

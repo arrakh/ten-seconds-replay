@@ -781,6 +781,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2197498571421140346}
   - component: {fileID: 5896007278401056796}
+  - component: {fileID: 218038258852284584}
   m_Layer: 0
   m_Name: HandshakeMiniGame
   m_TagString: Untagged
@@ -827,16 +828,19 @@ MonoBehaviour:
     bgSprite: {fileID: 21300000, guid: 87ec9370d26b6174ba0c0109f38bf896, type: 3}
     angrySprite: {fileID: 21300000, guid: e70b03a620d6fc142bc0214c14109b59, type: 3}
     happySprite: {fileID: 21300000, guid: 099ab66824726534fb1a0396e5d1e4aa, type: 3}
+    ambienceSound: {fileID: 0}
   - id: bow
     personSprite: {fileID: 21300000, guid: de3d2674ca5d0aa45aa5d0eadeb51ed6, type: 3}
     bgSprite: {fileID: 21300000, guid: 618a7354e4fa93c4ca61c296ed0da657, type: 3}
     angrySprite: {fileID: 21300000, guid: cfedc3e4a0a02514daa2109f91dd33b9, type: 3}
     happySprite: {fileID: 21300000, guid: 188dc13cd0f93284c9914b908e1ca9cf, type: 3}
+    ambienceSound: {fileID: 0}
   - id: raghad
     personSprite: {fileID: 21300000, guid: e3a4440f1dbba4d4cb016d71610de239, type: 3}
     bgSprite: {fileID: 21300000, guid: 08a0690e279647140baa0b3557212f2e, type: 3}
     angrySprite: {fileID: 21300000, guid: 68cd96f0b2cb09840b338b07bfdd7101, type: 3}
     happySprite: {fileID: 21300000, guid: 12872bc2efe6a724880b729664ed44d5, type: 3}
+    ambienceSound: {fileID: 0}
   optionParent: {fileID: 4896307949338641915}
   pointerSpeed: 3
   optionCount: 3
@@ -848,6 +852,102 @@ MonoBehaviour:
   failParticle: {fileID: 7024435179753111767}
   answerAnim: {fileID: 2738368053084411927}
   bobAnim: {fileID: 3992075302746551278}
+--- !u!82 &218038258852284584
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5551363133416258133}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6359901304693674437
 GameObject:
   m_ObjectHideFlags: 0
