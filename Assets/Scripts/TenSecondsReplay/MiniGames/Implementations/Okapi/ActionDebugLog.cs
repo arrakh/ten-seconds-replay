@@ -14,6 +14,9 @@ namespace TenSecondsReplay.MiniGames.Implementations.Okapi
 
         public override void Execute()
         {
+            if (!enableAction) return;
+            if (!EvaluatePreconditions()) return;
+            
             Debug.Log("PING");
         }
 

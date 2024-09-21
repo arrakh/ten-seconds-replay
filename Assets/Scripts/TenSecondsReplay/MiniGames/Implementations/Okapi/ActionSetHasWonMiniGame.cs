@@ -16,6 +16,9 @@ namespace TenSecondsReplay.MiniGames.Implementations.Okapi.Editor
 
         public override void Execute()
         {
+            if (!enableAction) return;
+            if (!EvaluatePreconditions()) return;
+            
             minigame.SetHasWon(hasWon);
         }
         
