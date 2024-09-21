@@ -8,6 +8,5 @@ namespace TenSecondsReplay.MiniGames.Implementations.Food
     {
         public CutleryType type;
         public Sprite image;
-        public AudioClip ambienceSound;
     }
 }
