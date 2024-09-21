@@ -1170,7 +1170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: Plays sound knobsqueak at volume 1 and at pitch 1
+  _explanation: Plays sound knobsqueak with a volume in the range [0.2244956,0.2442954]
+    and a pitch in the range [0.9913899,1.188192]
   description: 
   enableAction: 1
   hasTags: 0
@@ -1178,8 +1179,8 @@ MonoBehaviour:
   hasConditions: 0
   actionConditions: []
   clip: {fileID: 8300000, guid: c1757de950199f9499447e9308d40681, type: 3}
-  volume: {x: 1, y: 1}
-  pitch: {x: 1, y: 1}
+  volume: {x: 0.22449562, y: 0.24429545}
+  pitch: {x: 0.99138993, y: 1.1881921}
 --- !u!1 &4547450599569597459
 GameObject:
   m_ObjectHideFlags: 0
