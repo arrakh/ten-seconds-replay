@@ -20,8 +20,13 @@ namespace TenSecondsReplay
         [SerializeField] private ResultSequenceUI resultSequenceUI;
         [SerializeField] private GameTimerUI gameTimerUI;
         [SerializeField] private GameOverUI gameOverUI;
-        [SerializeField] private float promptTime, gameTime, resultTime;
+        
+        [Header("Difficulty Settings")]
         [SerializeField] private int maxFail = 3;
+        [SerializeField] private float promptTime, resultTime;
+        [SerializeField] private float minTime, maxTime;
+        [FormerlySerializedAs("timeCurve")] [SerializeField] private AnimationCurve difficultyCurve;
+        [SerializeField] private int gameCountUpperBound = 100;
         
         [Header("DEBUG")] 
         [SerializeField] private bool useDebugMiniGame;
@@ -29,7 +34,7 @@ namespace TenSecondsReplay
 
         public GameState State => state;
 
-        private int fail, score;
+        private int fail, score, gameCount;
         private float difficultyValue = 1f;
         private GameState state;
 
@@ -58,8 +63,6 @@ namespace TenSecondsReplay
 
         private void StartRandomMiniGame()
         {
-            if (currentMiniGame != null) Destroy(currentMiniGame.gameObject);
-
             int randIndex;
             
             do
@@ -91,14 +94,20 @@ namespace TenSecondsReplay
             
             state = GameState.Game;
             currentMiniGame.OnGameStart();
-            _currentTimer = _currentMaxTimer = gameTime;
-            yield return new WaitForSeconds(gameTime);
+            var time = GetGameTime();
+            Debug.Log($"Time is now {time}");
+            _currentTimer = _currentMaxTimer = time;
+            yield return new WaitForSeconds(time);
 
             state = GameState.Result;
 
             EvaluateGame();
+
+            gameCount++;
             
             resultSequenceUI.Display(score, fail);
+            if (currentMiniGame != null) Destroy(currentMiniGame.gameObject);
+
             yield return new WaitForSeconds(resultTime);
 
             if (fail < maxFail) StartRandomMiniGame();
@@ -109,6 +118,14 @@ namespace TenSecondsReplay
             }
             
             resultSequenceUI.Hide();
+        }
+
+        private float GetGameTime()
+        {
+            if (gameCount > gameCountUpperBound) return minTime;
+            var alpha = (float) gameCount / gameCountUpperBound;
+            var eval = difficultyCurve.Evaluate(alpha);
+            return Mathf.Lerp(maxTime, minTime, eval);
         }
 
         private void EvaluateGame()

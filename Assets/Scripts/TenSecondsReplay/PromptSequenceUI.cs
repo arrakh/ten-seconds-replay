@@ -17,7 +17,7 @@ namespace TenSecondsReplay
             
             promptText.text = miniGame.PromptText;
             var instance = SoundManager.instance;
-            Debug.Log(instance == null);
+            //Debug.Log(instance == null);
             SoundManager.PlaySound(promptAudio);
         }
 
