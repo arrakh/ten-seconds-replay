@@ -5,6 +5,7 @@
         None = 0,
         Prompt,
         Game,
-        Result
+        Result,
+        GameOver
     }
 }

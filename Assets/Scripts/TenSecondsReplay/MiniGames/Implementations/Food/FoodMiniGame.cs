@@ -67,10 +67,10 @@ namespace TenSecondsReplay.MiniGames.Implementations.Food
             
             Debug.Log($"Answered with {cutlery.Type}");
 
+            HasWon = cutlery.Type == currentPrompt.type;
+
             clickSound.clip = HasWon ? correctAnswer : wrongAnswer;
             clickSound.Play();
-
-            HasWon = cutlery.Type == currentPrompt.type;
         }
 
         public override void OnGameStart()

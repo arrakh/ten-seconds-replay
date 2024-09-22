@@ -9,11 +9,11 @@ namespace TenSecondsReplay.MiniGames.Implementations.Okapi
         
         public override string GetTriggerTitle() => "On Minigame Start";
 
-        private void OnEnable() => miniGame.onKeyInput += OnKeyInput;
+        private void OnEnable() => miniGame.onGameStart += OnGameStart;
 
-        private void OnDisable() => miniGame.onKeyInput -= OnKeyInput;
+        private void OnDisable() => miniGame.onGameStart -= OnGameStart;
 
-        private void OnKeyInput()
+        private void OnGameStart()
         {
             if (!isTriggerEnabled) return;
             if (!EvaluatePreconditions()) return;

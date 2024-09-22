@@ -179,7 +179,7 @@ MonoBehaviour:
   resultTime: 3
   maxFail: 3
   useDebugMiniGame: 1
-  debugMiniGameIndex: 5
+  debugMiniGameIndex: 0
 --- !u!4 &405253058
 Transform:
   m_ObjectHideFlags: 0
@@ -659,6 +659,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7191278922331538927, guid: 6c67cc415b7a7274ba2784688cd1db15, type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 405253057}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -860,6 +864,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4323295851505744607, guid: 233e0f63f20feb44e86c8f0c745cd212, type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 405253057}
     - target: {fileID: 5899100957011956357, guid: 233e0f63f20feb44e86c8f0c745cd212, type: 3}
       propertyPath: m_Name
       value: GameOverUI

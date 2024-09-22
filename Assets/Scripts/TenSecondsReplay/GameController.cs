@@ -27,6 +27,8 @@ namespace TenSecondsReplay
         [SerializeField] private bool useDebugMiniGame;
         [SerializeField] private int debugMiniGameIndex;
 
+        public GameState State => state;
+
         private int fail, score;
         private float difficultyValue = 1f;
         private GameState state;
@@ -100,7 +102,11 @@ namespace TenSecondsReplay
             yield return new WaitForSeconds(resultTime);
 
             if (fail < maxFail) StartRandomMiniGame();
-            else gameOverUI.Display(score);
+            else
+            {
+                state = GameState.GameOver;
+                gameOverUI.Display(score);
+            }
             
             resultSequenceUI.Hide();
         }

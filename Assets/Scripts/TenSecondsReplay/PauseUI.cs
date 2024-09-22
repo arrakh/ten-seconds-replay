@@ -9,6 +9,7 @@ namespace TenSecondsReplay
     {
         [SerializeField] private Button menuButton, quitButton;
         [SerializeField] private GameObject holder;
+        [SerializeField] private GameController gameController; 
         
         private bool isPaused;
         
@@ -31,6 +32,8 @@ namespace TenSecondsReplay
 
         private void Update()
         {
+            if (gameController.State == GameState.GameOver) return;
+
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 isPaused = !isPaused;

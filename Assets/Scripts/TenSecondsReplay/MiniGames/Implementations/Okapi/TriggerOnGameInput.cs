@@ -21,7 +21,7 @@ namespace TenSecondsReplay.MiniGames.Implementations.Okapi
             if (!isTriggerEnabled) return;
             if (!EvaluatePreconditions()) return;
             
-            Debug.Log("ON GAME INPUT");
+            //Debug.Log("ON GAME INPUT");
 
             ExecuteTrigger();
         }

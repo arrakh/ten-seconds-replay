@@ -1,11 +1,9 @@
-﻿using System;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace TenSecondsReplay.Utilities
 {
-    public class ScaleAnimation : MonoBehaviour
+    public class RotateAnimation : MonoBehaviour
     {
         [SerializeField] private Transform target;
         [SerializeField] private bool playOnStart = true;
@@ -14,7 +12,8 @@ namespace TenSecondsReplay.Utilities
         [SerializeField] private Ease ease;
         [SerializeField] private int loopCount;
         [SerializeField] private LoopType loopType;
-
+        [SerializeField] private bool preserveOriginalRotation = true;
+        
         [Header("Options")]
         [SerializeField] private bool randomizeDuration;
         [SerializeField] private float randomDurationRange;
@@ -30,13 +29,23 @@ namespace TenSecondsReplay.Utilities
         {
             StopAnimation();
 
-            target.transform.localScale = from;
+            Vector3 fromFinal = from;
+            Vector3 toFinal = to;
+
+            if (preserveOriginalRotation)
+            {
+                var angle = target.transform.eulerAngles;
+                fromFinal = angle + from;
+                toFinal = angle + to;
+            }
+
+            target.transform.eulerAngles = fromFinal;
             
             var dur = randomizeDuration
                 ? Random.Range(duration - randomDurationRange, duration + randomDurationRange)
                 : duration;
             
-            tween = target.DOScale(to, dur)
+            tween = target.DORotate(toFinal, dur)
                 .SetEase(ease)
                 .SetLoops(loopCount, loopType);
         }
@@ -46,11 +55,11 @@ namespace TenSecondsReplay.Utilities
             if (tween != null) tween.Kill();
         }
         
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         private void OnValidate()
         {
             if (!target) target = transform;
         }
-        #endif
+#endif
     }
 }

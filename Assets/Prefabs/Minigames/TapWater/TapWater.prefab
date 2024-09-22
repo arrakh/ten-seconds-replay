@@ -241,6 +241,7 @@ Transform:
   - {fileID: 8047632435946012102}
   - {fileID: 5422918582733155946}
   - {fileID: 8348640504619840702}
+  - {fileID: 5058508834593233652}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2551027143345155244
@@ -394,6 +395,7 @@ GameObject:
   - component: {fileID: 8864330183169740244}
   - component: {fileID: 2771009517692712967}
   - component: {fileID: 5427836897808430503}
+  - component: {fileID: 7772472928010355653}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -439,8 +441,7 @@ MonoBehaviour:
     WaterState3\n          if (Counter == BreakPoint3) disables object WaterState3\n         
     if (Counter == BreakPoint3) execute Unity event\n          Mark Minigame to win\n         
     plays sound knobsqueak with a volume in the range [0.2244956,0.2442954] and a
-    pitch in the range [0.9913899,1.188192]\n          if (Counter >= BreakPoint3)
-    disables action [plays sound waterrunning at volume 1 and at pitch 1]\n"
+    pitch in the range [0.9913899,1.188192]\n          disables object WaterSoundLoop\n"
   description: 
   enableTrigger: 1
   allowRetrigger: 1
@@ -472,7 +473,7 @@ MonoBehaviour:
   - delay: 0
     action: {fileID: 8464166928193407448}
   - delay: 0
-    action: {fileID: 2594456868502128921}
+    action: {fileID: 728126910428980447}
   miniGame: {fileID: 2551027143345155244}
 --- !u!114 &5427836897808430503
 MonoBehaviour:
@@ -487,8 +488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: "After 2 seconds, trigger the actions::\n          plays sound waterrunning
-    at volume 1 and at pitch 1\n"
+  _explanation: "After 2 seconds, trigger the actions::\n          [NULL]\n"
   description: 
   enableTrigger: 1
   allowRetrigger: 0
@@ -496,11 +496,35 @@ MonoBehaviour:
   preConditions: []
   actions:
   - delay: 0
-    action: {fileID: 1918858339706552977}
+    action: {fileID: 0}
   startTriggered: 0
   initialDelayEnable: 0
   initialDelay: {x: 5, y: 5}
   timeInterval: {x: 2, y: 2}
+--- !u!114 &7772472928010355653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263769704127241631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c165f02d81104d9fa8ad6dabee9c2082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: "When prompt ends and Minigame starts:\n          enables object
+    WaterSoundLoop\n"
+  description: 
+  enableTrigger: 1
+  allowRetrigger: 1
+  hasPreconditions: 0
+  preConditions: []
+  actions:
+  - delay: 0
+    action: {fileID: 7531818852675479657}
+  miniGame: {fileID: 2551027143345155244}
 --- !u!1 &1689346665293859656
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,6 +637,77 @@ MonoBehaviour:
   hasLimits: 0
   minValue: -3.4028235e+38
   maxValue: 3.4028235e+38
+--- !u!1 &1769401156347632857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5058508834593233652}
+  - component: {fileID: 728126910428980447}
+  m_Layer: 0
+  m_Name: DisableWaterSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5058508834593233652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769401156347632857}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9057132560139064862}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &728126910428980447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769401156347632857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c4cd7728b890f44ab45fb8ca143d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: If (Counter >= BreakPoint3) disables object WaterSoundLoop
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 1
+  actionConditions:
+  - negate: 0
+    valueHandler: {fileID: 4380161175914106243}
+    variable: {fileID: 0}
+    valueType: 0
+    tag: {fileID: 0}
+    tagCountRangeEnabled: 0
+    tagCountRange: 0
+    sourceTransform: {fileID: 0}
+    rigidBody: {fileID: 0}
+    axis: 0
+    probe: {fileID: 0}
+    movementPlatformer: {fileID: 0}
+    comparison: 4
+    value: 0
+    comparisonValueHandler: {fileID: 7297495748450914879}
+    comparisonVariable: {fileID: 0}
+    percentageCompare: 0
+  target: {fileID: 7460999450776701750}
+  state: 1
 --- !u!1 &1964579257960880046
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,9 +1041,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8348640504619840702}
-  - component: {fileID: 2594456868502128921}
+  - component: {fileID: 7531818852675479657}
   m_Layer: 0
-  m_Name: disablewatter
+  m_Name: EnableWaterSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -969,7 +1064,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9057132560139064862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2594456868502128921
+--- !u!114 &7531818852675479657
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -978,37 +1073,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3206670331453331951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31863e175690d5a49b2571d3fb18d15e, type: 3}
+  m_Script: {fileID: 11500000, guid: f6c4cd7728b890f44ab45fb8ca143d36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: If (Counter >= BreakPoint3) disables action [plays sound waterrunning
-    at volume 1 and at pitch 1]
+  _explanation: Enables object WaterSoundLoop
   description: 
   enableAction: 1
   hasTags: 0
   actionTags: []
-  hasConditions: 1
-  actionConditions:
-  - negate: 0
-    valueHandler: {fileID: 4380161175914106243}
-    variable: {fileID: 0}
-    valueType: 0
-    tag: {fileID: 0}
-    tagCountRangeEnabled: 0
-    tagCountRange: 0
-    sourceTransform: {fileID: 0}
-    rigidBody: {fileID: 0}
-    axis: 0
-    probe: {fileID: 0}
-    movementPlatformer: {fileID: 0}
-    comparison: 4
-    value: 0
-    comparisonValueHandler: {fileID: 7297495748450914879}
-    comparisonVariable: {fileID: 0}
-    percentageCompare: 0
-  target: {fileID: 1918858339706552977}
-  state: 1
+  hasConditions: 0
+  actionConditions: []
+  target: {fileID: 7460999450776701750}
+  state: 0
 --- !u!1 &3740090871526793203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1789,14 +1866,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5422918582733155946}
-  - component: {fileID: 1918858339706552977}
+  - component: {fileID: 6477157126940499038}
   m_Layer: 0
-  m_Name: water sound
+  m_Name: WaterSoundLoop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5422918582733155946
 Transform:
   m_ObjectHideFlags: 0
@@ -1812,46 +1889,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9057132560139064862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1918858339706552977
-MonoBehaviour:
+--- !u!82 &6477157126940499038
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7460999450776701750}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 766d16681200cf841a49e1df59f6076f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showInfo: 1
-  _explanation: Plays sound waterrunning at volume 1 and at pitch 1
-  description: 
-  enableAction: 1
-  hasTags: 0
-  actionTags: []
-  hasConditions: 0
-  actionConditions:
-  - negate: 0
-    valueHandler: {fileID: 4380161175914106243}
-    variable: {fileID: 0}
-    valueType: 0
-    tag: {fileID: 0}
-    tagCountRangeEnabled: 0
-    tagCountRange: 0
-    sourceTransform: {fileID: 0}
-    rigidBody: {fileID: 0}
-    axis: 0
-    probe: {fileID: 0}
-    movementPlatformer: {fileID: 0}
-    comparison: 1
-    value: 0
-    comparisonValueHandler: {fileID: 7297495748450914879}
-    comparisonVariable: {fileID: 0}
-    percentageCompare: 0
-  clip: {fileID: 8300000, guid: c710de64097bd3349840a6a1c2077cb1, type: 3}
-  volume: {x: 1, y: 1}
-  pitch: {x: 1, y: 1}
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c710de64097bd3349840a6a1c2077cb1, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7526089986711335512
 GameObject:
   m_ObjectHideFlags: 0
